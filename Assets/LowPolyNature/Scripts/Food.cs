@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/***
 public class Food : InventoryItemBase
 {
+
     public int FoodPoints = 20;
 
     public override void OnUse()
@@ -15,3 +17,4 @@ public class Food : InventoryItemBase
         Destroy(this.gameObject);
     }
 }
+***/

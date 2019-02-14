@@ -19,11 +19,11 @@ public class PlayerController : MonoBehaviour
 
     private HealthBar mHealthBar;
 
-    private HealthBar mFoodBar;
+    //private HealthBar mFoodBar;
 
     private int startHealth;
 
-    private int startFood;
+    //private int startFood;
 
     #endregion
 
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         mHealthBar.Max = Health;
         startHealth = Health;
         mHealthBar.SetValue(Health);
-
+        /***
         mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
         mFoodBar.Min = 0;
         mFoodBar.Max = Food;
@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
         mFoodBar.SetValue(Food);
 
         InvokeRepeating("IncreaseHunger", 0, HungerRate);
+        ***/
     }
 
     #region Inventory
@@ -150,17 +151,16 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    #region Health & Hunger
+    #region Health 
 
     [Tooltip("Amount of health")]
     public int Health = 100;
 
-    [Tooltip("Amount of food")]
-    public int Food = 100;
 
     [Tooltip("Rate in seconds in which the hunger increases")]
     public float HungerRate = 0.5f;
 
+    /***
     public void IncreaseHunger()
     {
         Food--;
@@ -175,12 +175,13 @@ public class PlayerController : MonoBehaviour
             _animator.SetTrigger("death");
         }
     }
+    ***/
 
     public bool IsDead
     {
         get
         {
-            return Health == 0 || Food == 0;
+            return Health == 0;
         }
     }
 
@@ -195,7 +196,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+    /***
     public void Eat(int amount)
     {
         Food += amount;
@@ -207,6 +208,7 @@ public class PlayerController : MonoBehaviour
         mFoodBar.SetValue(Food);
 
     }
+    ***/
 
     public void Rehab(int amount)
     {
