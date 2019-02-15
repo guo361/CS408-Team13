@@ -5196,6 +5196,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7a76ab4dba6bbf4184c778511a5545e, type: 3}
+--- !u!1 &778778059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4275564124094844903, guid: a48c57f357c39a34d93baeaefb401731,
+    type: 3}
+  m_PrefabInstance: {fileID: 727464498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &791045670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8453,6 +8459,16 @@ PrefabInstance:
       propertyPath: Hud
       value: 
       objectReference: {fileID: 1903215248}
+    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
+        type: 3}
+      propertyPath: diepopup
+      value: 
+      objectReference: {fileID: 778778059}
+    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
+        type: 3}
+      propertyPath: dietext
+      value: 
+      objectReference: {fileID: 1652672704}
     - target: {fileID: 4081584095433592, guid: fbc08fd83daf78c4483cae67db92c0e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.569
@@ -10016,6 +10032,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7427d58673d0cb247949bdea690924cc, type: 3}
+--- !u!114 &1652672704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2116981459550216937, guid: a48c57f357c39a34d93baeaefb401731,
+    type: 3}
+  m_PrefabInstance: {fileID: 727464498}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1655496430 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 875be8807fcfce845a94279964d94e77,
