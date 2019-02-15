@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -43,6 +44,9 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    public GameObject diepopup;
+    public Text dietext;
+
     // Use this for initialization
     void Start()
     {
@@ -56,6 +60,7 @@ public class PlayerController : MonoBehaviour
         mHealthBar.Max = Health;
         startHealth = Health;
         mHealthBar.SetValue(Health);
+        diepopup.SetActive(false);
         /***
         mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
         mFoodBar.Min = 0;
@@ -266,6 +271,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (IsDead)
+        {
+            diepopup.SetActive(true);
+        }
         if (!IsDead && mIsControlEnabled)
         {
             // Interact with the item
