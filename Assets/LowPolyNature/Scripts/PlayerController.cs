@@ -274,6 +274,7 @@ public class PlayerController : MonoBehaviour
         if (IsDead)
         {
             diepopup.SetActive(true);
+            dietext.text = "You Died ! ";
         }
         if (!IsDead && mIsControlEnabled)
         {
@@ -388,5 +389,13 @@ public class PlayerController : MonoBehaviour
             Hud.CloseMessagePanel();
             mInteractItem = null;
         }
+    }
+
+    public void ExitButton()
+    {
+        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
+        Debug.Log("Quit!");
+        
     }
 }
