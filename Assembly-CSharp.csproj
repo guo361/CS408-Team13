@@ -64,6 +64,8 @@
     <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\CardEffects.cs" />
     <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\EffectController.cs" />
+    <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\Healthbar.cs" />
     <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\ToastController.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\Axe.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\Crate.cs" />
