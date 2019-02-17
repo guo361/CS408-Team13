@@ -8,11 +8,26 @@ using UnityEngine.UI;
 public class CreateCharacterButton : MonoBehaviour
 {
     public InputField name;
+    public GameObject message;
+
+    void Start()
+    {
+        message = GameObject.Find("message");
+        message.SetActive(false);
+    }
     public void Button_Onclick()
     {
-        PlayerPrefs.SetString("Username", name.text);
-        Debug.Log("push");
-        SceneManager.LoadScene("demo");
+        if(name.text.Length > 0 && name.text.Length < 9)
+        {
+            PlayerPrefs.SetString("Username", name.text);
+            Debug.Log("push");
+            SceneManager.LoadScene("demo");
+        }
+        else
+        {
+            message.SetActive(true);
+        }
+        
     }
 
    /* public void Awake()
