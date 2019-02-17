@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private InventoryItemBase mCurrentItem = null;
 
     private HealthBar mHealthBar;
-
+    private Text mName;
     //private HealthBar mFoodBar;
 
     private int startHealth;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public HUD Hud;
 
     public float JumpSpeed = 7.0f;
+    public Text textObject;
 
     #endregion
 
@@ -56,6 +58,8 @@ public class PlayerController : MonoBehaviour
         mHealthBar.Max = Health;
         startHealth = Health;
         mHealthBar.SetValue(Health);
+        mName = Hud.transform.Find("Bars_Panel/Name").GetComponent<Text>();
+        mName.text = "Name: " + PlayerPrefs.GetString("Username");
         /***
         mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
         mFoodBar.Min = 0;
