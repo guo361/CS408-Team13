@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     private int startHealth;
 
+    private Text mName;
+
     //private int startFood;
 
     #endregion
@@ -62,6 +64,8 @@ public class PlayerController : MonoBehaviour
         startHealth = Health;
         mHealthBar.SetValue(Health);
         diepopup.SetActive(false);
+        mName = Hud.transform.Find("Bars_Panel/Name").GetComponent<Text>();
+        mName.text = "Name: " + PlayerPrefs.GetString("Username");
         /***
         mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
         mFoodBar.Min = 0;
@@ -395,8 +399,8 @@ public class PlayerController : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
-        Debug.Log("Quit!");
+//        UnityEditor.EditorApplication.isPlaying = false;
+//        Debug.Log("Quit!");
         
     }
 
