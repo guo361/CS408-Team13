@@ -14,4 +14,8 @@ public class SettingMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void FullScreen() {
+        Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+    }
 }
