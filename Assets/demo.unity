@@ -1721,11 +1721,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350526271}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.7333095, y: 2.9603648, z: 1.2983245}
-  m_Center: {x: -0.14124715, y: 1.3171318, z: 0.14916228}
+  m_Size: {x: 4.09321, y: 0.19083053, z: 2.862904}
+  m_Center: {x: 0.44533613, y: -0.067634255, z: 1.4705158}
 --- !u!54 &350526273
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1737,7 +1737,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1755,7 +1755,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350526271}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c82d7afe4d730f469be3b025afa645e, type: 3}
   m_Name: 
@@ -8593,6 +8593,11 @@ PrefabInstance:
       propertyPath: Hud
       value: 
       objectReference: {fileID: 1903215248}
+    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
+        type: 3}
+      propertyPath: scene
+      value: BossFight
+      objectReference: {fileID: 0}
     - target: {fileID: 4081584095433592, guid: fbc08fd83daf78c4483cae67db92c0e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.569
@@ -9558,7 +9563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4405990468133924, guid: c672b358a686fe8458489f26ce36c7f6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.8189306
+      value: 3.062
       objectReference: {fileID: 0}
     - target: {fileID: 4405990468133924, guid: c672b358a686fe8458489f26ce36c7f6, type: 3}
       propertyPath: m_LocalRotation.x
@@ -9887,22 +9892,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1964347730}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1624831672
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624831671}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1624831673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9911,11 +9900,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624831671}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3917456, y: 1.9829443, z: 1.7131221}
-  m_Center: {x: 0.18842268, y: 1.0633818, z: 0.09738506}
+  m_Size: {x: 3.595546, y: 0.20877717, z: 2.6593997}
+  m_Center: {x: -0.3471876, y: 0.07551203, z: 0.5705267}
 --- !u!4 &1624831675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4439534035228456, guid: 5ce3bfd454b2c7e43a735e5a810875be,
@@ -10663,6 +10652,10 @@ PrefabInstance:
     - target: {fileID: 1354351308895654, guid: 82f3fa3a38cb41240ba9e944229420d0, type: 3}
       propertyPath: m_Name
       value: boss_golem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354351308895654, guid: 82f3fa3a38cb41240ba9e944229420d0, type: 3}
+      propertyPath: m_TagString
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4574446674899668, guid: 82f3fa3a38cb41240ba9e944229420d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12626,9 +12619,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: fallen_guardian
       objectReference: {fileID: 0}
+    - target: {fileID: 1508748643913082, guid: 5ce3bfd454b2c7e43a735e5a810875be, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4439534035228456, guid: 5ce3bfd454b2c7e43a735e5a810875be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.88
+      value: -11.61
       objectReference: {fileID: 0}
     - target: {fileID: 4439534035228456, guid: 5ce3bfd454b2c7e43a735e5a810875be, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12636,7 +12633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4439534035228456, guid: 5ce3bfd454b2c7e43a735e5a810875be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.64
+      value: -1.3
       objectReference: {fileID: 0}
     - target: {fileID: 4439534035228456, guid: 5ce3bfd454b2c7e43a735e5a810875be, type: 3}
       propertyPath: m_LocalRotation.x

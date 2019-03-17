@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
+
 {
+    public string scene;
     #region Private Members
 
     private Animator _animator;
@@ -357,6 +360,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("enemy"))
+        {
+
+            SceneManager.LoadScene(scene);
+        }
         InteractableItemBase item = other.GetComponent<InteractableItemBase>();
 
         if (item != null)
@@ -369,6 +377,11 @@ public class PlayerController : MonoBehaviour
                 Hud.OpenMessagePanel(mInteractItem);
             }
         }
+
+
+       
+
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -380,4 +393,5 @@ public class PlayerController : MonoBehaviour
             mInteractItem = null;
         }
     }
+
 }
