@@ -9369,30 +9369,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1438851699991618, guid: fbc08fd83daf78c4483cae67db92c0e7, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
-        type: 3}
-      propertyPath: Inventory
-      value: 
-      objectReference: {fileID: 606667198}
-    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
-        type: 3}
-      propertyPath: Hud
-      value: 
-      objectReference: {fileID: 1903215248}
-    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
-        type: 3}
-      propertyPath: diepopup
-      value: 
-      objectReference: {fileID: 778778059}
-    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
-        type: 3}
-      propertyPath: dietext
-      value: 
-      objectReference: {fileID: 1652672704}
     - target: {fileID: 4081584095433592, guid: fbc08fd83daf78c4483cae67db92c0e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.569
@@ -9424,6 +9400,35 @@ PrefabInstance:
     - target: {fileID: 4081584095433592, guid: fbc08fd83daf78c4483cae67db92c0e7, type: 3}
       propertyPath: m_RootOrder
       value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438851699991618, guid: fbc08fd83daf78c4483cae67db92c0e7, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
+        type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 606667198}
+    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
+        type: 3}
+      propertyPath: Hud
+      value: 
+      objectReference: {fileID: 1903215248}
+    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
+        type: 3}
+      propertyPath: diepopup
+      value: 
+      objectReference: {fileID: 778778059}
+    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
+        type: 3}
+      propertyPath: dietext
+      value: 
+      objectReference: {fileID: 1652672704}
+    - target: {fileID: 114776834927309406, guid: fbc08fd83daf78c4483cae67db92c0e7,
+        type: 3}
+      propertyPath: Health
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbc08fd83daf78c4483cae67db92c0e7, type: 3}

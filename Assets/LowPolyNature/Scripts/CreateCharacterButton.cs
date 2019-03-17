@@ -20,6 +20,7 @@ public class CreateCharacterButton : MonoBehaviour
         if(name.text.Length > 0 && name.text.Length < 9)
         {
             PlayerPrefs.SetString("Username", name.text);
+            PlayerPrefs.SetInt("Health", 100);
             Debug.Log("push");
             SceneManager.LoadScene("demo");
         }
