@@ -89,6 +89,7 @@
     <Compile Include="Assets\LowPolyNature\Scripts\PlayerController.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\PlayerFollow.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\Sheep.cs" />
+    <Compile Include="Assets\SettingMenu.cs" />
     <Compile Include="Assets\StartMenu.cs" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Demon\readMe.txt" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Rock\readMe.txt" />
