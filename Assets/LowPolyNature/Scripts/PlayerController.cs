@@ -399,8 +399,8 @@ public class PlayerController : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
-        Debug.Log("Quit!");
+//        UnityEditor.EditorApplication.isPlaying = false;
+//        Debug.Log("Quit!");
         
     }
 

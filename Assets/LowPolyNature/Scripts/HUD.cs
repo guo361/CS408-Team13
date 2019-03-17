@@ -15,6 +15,13 @@ public class HUD : MonoBehaviour {
         Inventory.ItemRemoved += Inventory_ItemRemoved;
 	}
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
+    }
+
     private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
     {
         Transform inventoryPanel = transform.Find("InventoryPanel");
@@ -134,4 +141,5 @@ public class HUD : MonoBehaviour {
 
         mIsMessagePanelOpened = false;
     }
+
 }

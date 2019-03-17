@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class DamageSource : MonoBehaviour {
 
+
+    public void OnTriggerEnter(Collider other) {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+
+        player.TakeDamage(50);
+
+
+    }
+
+    /*
     #region Private members
 
     private bool _isCausingDamage = false;
@@ -63,4 +73,6 @@ public class DamageSource : MonoBehaviour {
             _isCausingDamage = false;
         }
     }
+
+*/
 }
