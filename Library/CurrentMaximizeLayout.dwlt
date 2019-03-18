@@ -17,10 +17,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1440
-    height: 805
-  m_MinSize: {x: 681, y: 324}
-  m_MaxSize: {x: 12006, y: 8024}
+    width: 1522
+    height: 756
+  m_MinSize: {x: 683, y: 498}
+  m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
   controlID: 15731
 --- !u!114 &2
@@ -356,10 +356,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 305
-    y: 75
-    width: 797
-    height: 479
+    x: 456
+    y: 92
+    width: 1185
+    height: 655
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &10
 MonoBehaviour:
@@ -408,8 +408,12 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 0}
-  m_BreadCrumbs: []
+  m_AnimatorController: {fileID: 9100000, guid: 1f447b8ca37a7514daa1c5e4ab7196a1,
+    type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 1107345887509750178, guid: 1f447b8ca37a7514daa1c5e4ab7196a1,
+      type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
@@ -473,7 +477,7 @@ MonoBehaviour:
     height: 267
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: contro
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -488,7 +492,7 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders:
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/sun/Documents/GitHub/CS408-Team13
+  m_LastProjectPath: C:\Users\xu_83\Documents\GitHub\CS408-Team13
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
@@ -575,7 +579,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 25.5}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 244
 --- !u!114 &13
@@ -684,10 +688,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1162
-    y: 150
-    width: 306
-    height: 748
+    x: 1176
+    y: 80.8
+    width: 351
+    height: 736
   m_PersistentViewDataDictionary: {fileID: 0}
   m_InitialOpenURL: https://public-cdn.cloud.unity3d.com/editor/production/cloud/hub
   m_GlobalObjectTypeName: 

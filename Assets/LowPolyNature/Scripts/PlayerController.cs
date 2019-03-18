@@ -58,9 +58,9 @@ public class PlayerController : MonoBehaviour
 
         mHealthBar = Hud.transform.Find("Bars_Panel/HealthBar").GetComponent<HealthBar>();
         mHealthBar.Min = 0;
-        mHealthBar.Max = Health;
-        startHealth = Health;
-        mHealthBar.SetValue(Health);
+        mHealthBar.Max = PlayerPrefs.GetInt("Health", 100);
+        startHealth = PlayerPrefs.GetInt("Health", 100);
+        mHealthBar.SetValue(PlayerPrefs.GetInt("Health", 100));
         diepopup.SetActive(false);
         /***
         mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
