@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject diepopup;
     public Text dietext;
+    public string scene;
 
     // Use this for initialization
     void Start()
@@ -368,6 +369,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        if(other.gameObject.tag == "enemy")
+        {
+            SceneManager.LoadScene(scene);
+        }
         InteractableItemBase item = other.GetComponent<InteractableItemBase>();
 
         if (item != null)
