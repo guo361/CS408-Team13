@@ -87,6 +87,7 @@
     <Compile Include="Assets\LowPolyNature\Scripts\Sheep.cs" />
     <Compile Include="Assets\SettingMenu.cs" />
     <Compile Include="Assets\StartMenu.cs" />
+    <None Include="Assets\aggro radius\NewSurfaceShader.shader" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Demon\readMe.txt" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Rock\readMe.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
