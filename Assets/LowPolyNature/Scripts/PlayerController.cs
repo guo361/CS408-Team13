@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject diepopup;
     public Text dietext;
-    public string scene;
+    
 
     // Use this for initialization
     void Start()
