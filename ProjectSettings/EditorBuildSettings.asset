@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/create_character.unity
     guid: e8a80743b6ec4c644b3b9bf0a3941178
   - enabled: 1
-    path: Assets/demo.unity
+    path: Assets/orgin map.unity
     guid: 142bda4dcd785e9409c71a31ecb0cd4c
   - enabled: 1
     path: Assets/BossFight.unity

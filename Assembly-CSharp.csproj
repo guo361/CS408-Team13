@@ -95,15 +95,6 @@
     <None Include="Assets\aggro radius\NewSurfaceShader.shader" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Demon\readMe.txt" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Rock\readMe.txt" />
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/CS408/CS408-Team13/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/CS408/CS408-Team13/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/CS408/CS408-Team13/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/CS408/CS408-Team13/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
