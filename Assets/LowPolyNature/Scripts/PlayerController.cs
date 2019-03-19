@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
+
 {
+    public string scene;
     #region Private Members
 
     private Animator _animator;
@@ -369,9 +371,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if(other.gameObject.tag == "enemy")
+        if (other.gameObject.CompareTag("enemy"))
         {
+
             SceneManager.LoadScene(scene);
         }
         InteractableItemBase item = other.GetComponent<InteractableItemBase>();
@@ -386,6 +388,11 @@ public class PlayerController : MonoBehaviour
                 Hud.OpenMessagePanel(mInteractItem);
             }
         }
+
+
+       
+
+
     }
 
     private void OnTriggerExit(Collider other)
