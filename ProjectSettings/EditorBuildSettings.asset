@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/demo.unity
     guid: 142bda4dcd785e9409c71a31ecb0cd4c
+  - enabled: 1
+    path: Assets/BossFight.unity
+    guid: 3c12738638d106b4ca64b999f7fddbbf
   m_configObjects: {}
