@@ -3,5 +3,5 @@
 *.ide
 Temp/UnityLockfile
 .vs/CS408-Team13/v15/Server/sqlite3/storage.ide-wal
-Library/shadercompiler-UnityShaderCompiler.exe0.log
-Library/shadercompiler-UnityShaderCompiler.exe0.log
+.vs/CS408-Team13/v15/.suo
+*.log
