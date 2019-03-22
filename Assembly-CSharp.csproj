@@ -91,6 +91,7 @@
     <Compile Include="Assets\StartMenu.cs" />
     <None Include="Assets\aggro radius\NewSurfaceShader.shader" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Demon\readMe.txt" />
+    <None Include="Assets\MeshSmith\ToonMonsterII\Toon Rock Golem\readMe.txt" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Rock\readMe.txt" />
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/CS408/CS408-Team13/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
