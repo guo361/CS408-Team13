@@ -7,7 +7,6 @@ public class CardEffects : MonoBehaviour {
 
     [Tooltip("The angle between two neighbor cards in hand, this will be changed with different card numbers")]
     public float rotateAngle = 30.0f;
-
     [Tooltip("The angle between two neighbor cards will be changed with different card numbers, define card number here")]
     public List<int> cardNumForAngles = new List<int>();
     [Tooltip("The angle between two neighbor cards will be changed with different card numbers, define angle here")]
