@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         mHealthBar.Min = 0;
         mHealthBar.Max = 100;
         PlayerPrefs.SetFloat("Health", 100.0f);
-        startHealth = 100;
+        startHealth = (int) PlayerPrefs.GetFloat("Health", 100.0f);
 
         mHealthBar.SetValue((int) PlayerPrefs.GetFloat("Health",100.0f));
         Debug.Log("health in demo" + PlayerPrefs.GetFloat("Health", 100.0f));
