@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Goodegg : MonoBehaviour
 {
-    public static int healthAmount;
+    public static float healthAmount;
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = PlayerPrefs.GetInt("Health", 100);
+        healthAmount = PlayerPrefs.GetFloat("Health", 100.0f);
         healthAmount = healthAmount / 100;
         Debug.Log("health in fight start" + healthAmount);
     }

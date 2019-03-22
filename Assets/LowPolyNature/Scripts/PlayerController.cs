@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 
@@ -61,9 +62,12 @@ public class PlayerController : MonoBehaviour
 
         mHealthBar = Hud.transform.Find("Bars_Panel/HealthBar").GetComponent<HealthBar>();
         mHealthBar.Min = 0;
-        mHealthBar.Max = Health;
-        startHealth = Health;
-        mHealthBar.SetValue(Health);
+        mHealthBar.Max = 100;
+        PlayerPrefs.SetFloat("Health", 100.0f);
+        startHealth = (int) PlayerPrefs.GetFloat("Health", 100.0f);
+
+        mHealthBar.SetValue((int) PlayerPrefs.GetFloat("Health",100.0f));
+        Debug.Log("health in demo" + PlayerPrefs.GetFloat("Health", 100.0f));
         diepopup.SetActive(false);
         /***
         mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
@@ -237,6 +241,7 @@ public class PlayerController : MonoBehaviour
             Health = 0;
 
         mHealthBar.SetValue(Health);
+        PlayerPrefs.SetFloat("Health", Health);
 
         if (IsDead)
         {

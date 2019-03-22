@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BadEgg : MonoBehaviour
 {
-    public static int healthAmount;
+    public static float healthAmount;
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = 100;
+        healthAmount = 50;
         healthAmount = healthAmount / 100;
         Debug.Log("enemy" + healthAmount);
     }
