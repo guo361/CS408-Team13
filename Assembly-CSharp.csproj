@@ -65,8 +65,6 @@
     <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\CardEffects.cs" />
     <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\EffectController.cs" />
     <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\ToastController.cs" />
-    <Compile Include="Assets\Goodegg.cs" />
-    <Compile Include="Assets\HealthBarFight.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\Axe.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\Crate.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\DamageSource.cs" />
@@ -87,8 +85,12 @@
     <Compile Include="Assets\LowPolyNature\Scripts\PlayerController.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\PlayerFollow.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\Sheep.cs" />
+    <Compile Include="Assets\script\BadEgg.cs" />
     <Compile Include="Assets\script\Cards\Card.cs" />
     <Compile Include="Assets\script\Cards\CardViz.cs" />
+    <Compile Include="Assets\script\Goodegg.cs" />
+    <Compile Include="Assets\script\HealthBarEnemy.cs" />
+    <Compile Include="Assets\script\HealthBarFight.cs" />
     <Compile Include="Assets\SettingMenu.cs" />
     <Compile Include="Assets\StartMenu.cs" />
     <None Include="Assets\aggro radius\NewSurfaceShader.shader" />
