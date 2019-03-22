@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 324}
   m_MaxSize: {x: 12006, y: 8024}
   vertical: 0
-  controlID: 12303
+  controlID: 9214
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 324}
   m_MaxSize: {x: 8004, y: 8024}
   vertical: 1
-  controlID: 12304
+  controlID: 9215
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 224}
   m_MaxSize: {x: 8004, y: 4024}
   vertical: 0
-  controlID: 12190
+  controlID: 9216
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,8 +172,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 323
-    height: 469
+    width: 455
+    height: 673
   m_MinSize: {x: 202, y: 224}
   m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 6}
@@ -209,10 +209,10 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 3796}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ea51ffffb260fffff260ffffb665ffff8675ffffa676ffff3c88fffffc8dffff5c92ffffe6a5ffff3ca6ffff98b4ffffa4b4fffff8cbffff40cdffffdccdfffff0cdfffffccdffff94e1ffff52f5ffffb2f7ffff626f0000528c000004940000f69b0000089c0000109c0000549c0000
+      m_ExpandedIDs: d8cdffff58d0ffffd4fbfffff2610000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -297,9 +297,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.1727443, y: 1.1292245, z: 5.1085997}
+    m_Target: {x: 10.735247, y: 4.523604, z: 4.6418757}
     speed: 2
-    m_Value: {x: -4.1727443, y: 1.1292245, z: 5.1085997}
+    m_Value: {x: 10.735247, y: 4.523604, z: 4.6418757}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -327,13 +327,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.011966571, y: 0.066537, z: 0.0007986278, w: 0.99771196}
+    m_Target: {x: -0.14973144, y: 0.79063684, z: -0.21372887, w: -0.5538898}
     speed: 2
-    m_Value: {x: -0.011966571, y: 0.066537, z: 0.0007986278, w: 0.99771196}
+    m_Value: {x: -0.14973144, y: 0.79063684, z: -0.21372887, w: -0.5538898}
   m_Size:
-    m_Target: 14.6785965
+    m_Target: 8.544424
     speed: 2
-    m_Value: 14.6785965
+    m_Value: 8.544424
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -366,10 +366,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 456
-    y: 92
-    width: 1185
-    height: 655
+    x: 408
+    y: 73
+    width: 1063
+    height: 618
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &10
 MonoBehaviour:
@@ -500,20 +500,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/script
+    - Assets/MeshSmith/ToonMonsterII/Toon Rock Golem/Controller
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/script
+  - Assets/MeshSmith/ToonMonsterII/Toon Rock Golem/Controller
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\xu_83\Documents\GitHub\CS408-Team13
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 438}
-    m_SelectedIDs: ae6e0000
-    m_LastClickedID: 28334
-    m_ExpandedIDs: 00000000222f00004c2f00007e2f000016300000e032000040330000423300002a34000066370000e4370000ae6e000000ca9a3b
+    scrollPos: {x: 0, y: 35}
+    m_SelectedIDs: c64a0000
+    m_LastClickedID: 19142
+    m_ExpandedIDs: 00000000b2090000e2090000140a0000280b0000fc11000092120000cc4a0000d64a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -541,7 +541,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000222f00004c2f00007e2f000016300000e032000040330000423300002a34000066370000e4370000ae6e000000ca9a3b
+    m_ExpandedIDs: 00000000b2090000e2090000140a0000280b0000fc11000092120000cc4a0000d64a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -566,10 +566,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 9c9c0000
-    m_LastClickedInstanceID: 40092
+    m_SelectedInstanceIDs: c4baffff
+    m_LastClickedInstanceID: -17724
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c623000036490000d0950000c6950000dc950000e0950000d8950000a64800008a0a0000640b0000c07f0100c0380300e23803004c500000722d01009a2e01000000000062340000
+    m_ExpandedInstanceIDs: c623000036490000d0950000c6950000dc950000e0950000d8950000a64800008a0a0000640b0000c07f0100c0380300e23803004c500000722d01009a2e010000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
