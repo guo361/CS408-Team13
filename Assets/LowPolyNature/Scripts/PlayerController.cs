@@ -27,8 +27,6 @@ public class PlayerController : MonoBehaviour
 
     private int startHealth;
 
-    private Text mName;
-
     //private int startFood;
 
     #endregion
@@ -51,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject diepopup;
     public Text dietext;
+    
 
     // Use this for initialization
     void Start()
@@ -62,12 +61,10 @@ public class PlayerController : MonoBehaviour
 
         mHealthBar = Hud.transform.Find("Bars_Panel/HealthBar").GetComponent<HealthBar>();
         mHealthBar.Min = 0;
-        mHealthBar.Max = PlayerPrefs.GetInt("Health", 100);
-        startHealth = PlayerPrefs.GetInt("Health", 100);
-        mHealthBar.SetValue(PlayerPrefs.GetInt("Health", 100));
+        mHealthBar.Max = Health;
+        startHealth = Health;
+        mHealthBar.SetValue(Health);
         diepopup.SetActive(false);
-        mName = Hud.transform.Find("Bars_Panel/Name").GetComponent<Text>();
-        mName.text = "Name: " + PlayerPrefs.GetString("Username");
         /***
         mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
         mFoodBar.Min = 0;
