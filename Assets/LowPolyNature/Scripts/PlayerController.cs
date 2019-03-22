@@ -241,6 +241,7 @@ public class PlayerController : MonoBehaviour
             Health = 0;
 
         mHealthBar.SetValue(Health);
+        PlayerPrefs.SetFloat("Health", Health);
 
         if (IsDead)
         {
