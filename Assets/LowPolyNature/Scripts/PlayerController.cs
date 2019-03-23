@@ -4,12 +4,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 
 {
+    public string fight1;
+    public string fight2;
+    public string fight3;
+    public string bossfight;
 
-    public string scene;
+
     #region Private Members
 
     private Animator _animator;
@@ -51,9 +56,7 @@ public class PlayerController : MonoBehaviour
     public GameObject diepopup;
     public Text dietext;
     
-   
 
-    
     // Use this for initialization
     void Start()
     {
@@ -64,25 +67,13 @@ public class PlayerController : MonoBehaviour
 
         mHealthBar = Hud.transform.Find("Bars_Panel/HealthBar").GetComponent<HealthBar>();
         mHealthBar.Min = 0;
-        mHealthBar.Max = Health;
-        startHealth = Health;
-        mHealthBar.SetValue(Health);
-        diepopup.SetActive(false);
-        
-        if (PlayerPrefs.GetInt("haveCards") == 0) {
-            Debug.Log("here1\n");
-            CardLibrary.Instance.cardNumber = 4;
-            for (int i = 0; i < 4; i++) {
-                Debug.Log("here1\n");
-                Card newcard = new Card();
-                newcard.cardPrefab = GameObject.Find("attack");
-                newcard.cardName = "Attack";
-                CardLibrary.Instance.myCards.Add(newcard);
-                Debug.Log("here\n");
-            }
+        mHealthBar.Max = 100;
+        PlayerPrefs.SetFloat("Health", 100.0f);
+        startHealth = (int) PlayerPrefs.GetFloat("Health", 100.0f);
 
-            PlayerPrefs.SetInt("haveCards", 1);
-        }
+        mHealthBar.SetValue((int) PlayerPrefs.GetFloat("Health",100.0f));
+        Debug.Log("health in demo" + PlayerPrefs.GetFloat("Health", 100.0f));
+        diepopup.SetActive(false);
         /***
         mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
         mFoodBar.Min = 0;
@@ -255,6 +246,7 @@ public class PlayerController : MonoBehaviour
             Health = 0;
 
         mHealthBar.SetValue(Health);
+        PlayerPrefs.SetFloat("Health", Health);
 
         if (IsDead)
         {
@@ -389,10 +381,25 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag("redEnemy"))
         {
 
-            SceneManager.LoadScene(scene);
+            SceneManager.LoadScene(fight1);
+        }else if (other.gameObject.CompareTag("stoneEnemy1"))
+        {
+            SceneManager.LoadScene(fight2);
+
+        }
+        else if (other.gameObject.CompareTag("stoneEnemy2"))
+        {
+            SceneManager.LoadScene(fight3);
+
+
+        }
+        else if (other.gameObject.CompareTag("boss"))
+        {
+            SceneManager.LoadScene(bossfight);
+
         }
         InteractableItemBase item = other.GetComponent<InteractableItemBase>();
 
