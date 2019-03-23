@@ -86,8 +86,12 @@
     <Compile Include="Assets\LowPolyNature\Scripts\PlayerFollow.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\Sheep.cs" />
     <Compile Include="Assets\script\BadEgg.cs" />
+    <Compile Include="Assets\script\Boss.cs" />
     <Compile Include="Assets\script\Cards\Card.cs" />
     <Compile Include="Assets\script\Cards\CardViz.cs" />
+    <Compile Include="Assets\script\Enemy.cs" />
+    <Compile Include="Assets\script\Enemy2.cs" />
+    <Compile Include="Assets\script\Enemy3.cs" />
     <Compile Include="Assets\script\Goodegg.cs" />
     <Compile Include="Assets\script\HealthBarEnemy.cs" />
     <Compile Include="Assets\script\HealthBarFight.cs" />

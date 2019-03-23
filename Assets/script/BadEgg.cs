@@ -8,7 +8,7 @@ public class BadEgg : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = 50;
+        healthAmount = PlayerPrefs.GetFloat("EHealth1", 50.0f);
         healthAmount = healthAmount / 100;
         Debug.Log("enemy" + healthAmount);
     }
