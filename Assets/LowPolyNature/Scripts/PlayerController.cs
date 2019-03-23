@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 
 {
+
     public string scene;
     #region Private Members
 
@@ -50,7 +51,9 @@ public class PlayerController : MonoBehaviour
     public GameObject diepopup;
     public Text dietext;
     
+   
 
+    
     // Use this for initialization
     void Start()
     {
@@ -65,6 +68,21 @@ public class PlayerController : MonoBehaviour
         startHealth = Health;
         mHealthBar.SetValue(Health);
         diepopup.SetActive(false);
+        
+        if (PlayerPrefs.GetInt("haveCards") == 0) {
+            Debug.Log("here1\n");
+            CardLibrary.Instance.cardNumber = 4;
+            for (int i = 0; i < 4; i++) {
+                Debug.Log("here1\n");
+                Card newcard = new Card();
+                newcard.cardPrefab = GameObject.Find("attack");
+                newcard.cardName = "Attack";
+                CardLibrary.Instance.myCards.Add(newcard);
+                Debug.Log("here\n");
+            }
+
+            PlayerPrefs.SetInt("haveCards", 1);
+        }
         /***
         mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
         mFoodBar.Min = 0;

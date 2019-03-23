@@ -91,6 +91,8 @@ public class CardEffects : MonoBehaviour {
     public GameObject arrowHeadPrefab;
     public GameObject arrowBodyPrefab;
     public GameObject cardPrefab;
+    public GameObject attackcardPrefab;
+    public GameObject defencecardPrefab;
     public GameObject attackIconPrefab;
     public GameObject defenseIconPrefab;
 
@@ -124,8 +126,15 @@ public class CardEffects : MonoBehaviour {
     private const string ENEMY_CHARA_NAME = "BadEgg";
     private const int HAND_CARD_LIMIT = 10;
 
+    
+    void Awake()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
     void Start()
     {
+        
+        Debug.Log(CardLibrary.Instance.cardNumber);
         // Init cards in draw pile
         InitDrawPileCards();
 
@@ -191,6 +200,7 @@ public class CardEffects : MonoBehaviour {
 
     void InitDrawPileCards()
     {
+        
         for (int i = 0; i < cardTotalNum; ++i)
         {
             AddDrawPileCard();
@@ -1015,4 +1025,8 @@ public class Card
     public float dropDisplayTime;
     public Dictionary<string, int> info;  // Record card's info here
     public GameObject targetPlayer;       // Record character the card skilled on
+
+    //new attribute
+    public GameObject cardPrefab;
+    public string cardName;
 }
