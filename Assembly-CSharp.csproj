@@ -99,6 +99,7 @@
     <Compile Include="Assets\StartMenu.cs" />
     <None Include="Assets\aggro radius\NewSurfaceShader.shader" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Demon\readMe.txt" />
+    <None Include="Assets\Aekashics Librarium - Megapack III\Terms of use.txt" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Rock Golem\readMe.txt" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Rock\readMe.txt" />
     <Reference Include="Unity.TextMeshPro">

@@ -9,7 +9,12 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 
 {
-    public string scene;
+    public string fight1;
+    public string fight2;
+    public string fight3;
+    public string bossfight;
+
+
     #region Private Members
 
     private Animator _animator;
@@ -376,10 +381,25 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag("redEnemy"))
         {
 
-            SceneManager.LoadScene(scene);
+            SceneManager.LoadScene(fight1);
+        }else if (other.gameObject.CompareTag("stoneEnemy1"))
+        {
+            SceneManager.LoadScene(fight2);
+
+        }
+        else if (other.gameObject.CompareTag("stoneEnemy2"))
+        {
+            SceneManager.LoadScene(fight3);
+
+
+        }
+        else if (other.gameObject.CompareTag("boss"))
+        {
+            SceneManager.LoadScene(bossfight);
+
         }
         InteractableItemBase item = other.GetComponent<InteractableItemBase>();
 
