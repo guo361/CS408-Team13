@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Fight.unity
     guid: 5eb76d00b9cad05468ac90015967938c
+  - enabled: 1
+    path: Assets/Fight2.unity
+    guid: 1f8a5d3ad93518541b7c9ed3d0bb121f
+  - enabled: 1
+    path: Assets/Fight3.unity
+    guid: a4dfb1312df532d43b0df1b22781fa58
   m_configObjects: {}
