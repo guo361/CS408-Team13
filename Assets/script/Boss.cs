@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BadEgg : MonoBehaviour
+public class Boss : MonoBehaviour
 {
-    public static float healthAmount;
+    public static int Bhealth;
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = PlayerPrefs.GetFloat("EHealth1", 50.0f);
-        healthAmount = healthAmount / 100;
-        Debug.Log("enemy" + healthAmount);
+        PlayerPrefs.SetFloat("Boss", 150.0f);
+        Bhealth = (int)PlayerPrefs.GetFloat("Boss", 150.0f);
+        Debug.Log("Boss health in demo" + PlayerPrefs.GetFloat("Boss", 150.0f));
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        if (healthAmount <= 0)
+        if (Bhealth == 0)
         {
             Destroy(gameObject);
         }
