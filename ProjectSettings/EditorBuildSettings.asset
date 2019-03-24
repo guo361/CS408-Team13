@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Fight3.unity
     guid: a4dfb1312df532d43b0df1b22781fa58
+  - enabled: 1
+    path: Assets/start_menu.unity
+    guid: 5b28730a8053b47b48b07bfdca8dc59c
+  - enabled: 1
+    path: Assets/demo.unity
+    guid: a795404bee98076429ae310809fd61c7
   m_configObjects: {}

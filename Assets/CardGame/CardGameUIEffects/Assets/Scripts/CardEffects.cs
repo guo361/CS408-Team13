@@ -62,7 +62,7 @@ public class CardEffects : MonoBehaviour {
     [Tooltip("Number of arrow parts, the head is the last one")]
     public int arrowsNum = 11;
     [Tooltip("Total Number of cards")]
-    public int cardTotalNum = 15;
+    public int cardTotalNum = CardLibrary.Instance.cardNumber;
     [Tooltip("Number of cards sent to hand automatically")]
     public int handNumAuto = 5;
     [Tooltip("The minimum card scale use by drop and shuffle effects")]
@@ -91,8 +91,8 @@ public class CardEffects : MonoBehaviour {
     public GameObject arrowHeadPrefab;
     public GameObject arrowBodyPrefab;
     public GameObject cardPrefab;
-    public GameObject attackcardPrefab;
-    public GameObject defencecardPrefab;
+    public GameObject strikecardPrefab;
+    public GameObject guardcardPrefab;
     public GameObject attackIconPrefab;
     public GameObject defenseIconPrefab;
 
@@ -134,7 +134,7 @@ public class CardEffects : MonoBehaviour {
     void Start()
     {
         
-        Debug.Log(CardLibrary.Instance.cardNumber);
+        
         // Init cards in draw pile
         InitDrawPileCards();
 
@@ -200,31 +200,57 @@ public class CardEffects : MonoBehaviour {
 
     void InitDrawPileCards()
     {
-        
+        /*
         for (int i = 0; i < cardTotalNum; ++i)
         {
             AddDrawPileCard();
-        }
+        }*/
+        Debug.Log("here1");
+        AddDrawPileCard();
     }
 
     void AddDiscardPileCard(Card card)
     {
+        Debug.Log("here2");
         discardPileCards.Enqueue(card);
         discardPileText.text = DISCARD_PILE_NUM_TEXT + discardPileCards.Count.ToString();
     }
 
     void AddDrawPileCard(Dictionary<string, int> cardInfo = null)
     {
+        /*
         Card card = new Card();
         card.info = cardInfo;
         card.instance = (GameObject)Instantiate(cardPrefab);
         card.instance.SetActive(false);
         drawPileCards.Enqueue(card);
         drawPileText.text = DRAW_PILE_NUM_TEXT + drawPileCards.Count.ToString();
+        */
+        Debug.Log("here3");
+        foreach (Card temp in CardLibrary.Instance.myCards)
+        {
+            temp.info = cardInfo;
+            if (temp.cardName == "Strike")
+            {
+                
+                temp.instance = (GameObject)Instantiate(strikecardPrefab);
+            }
+            else if (temp.cardName == "Guard")
+            {
+                
+                temp.instance = (GameObject)Instantiate(guardcardPrefab);
+            }
+
+            temp.instance.SetActive(false);
+            drawPileCards.Enqueue(temp);
+            drawPileText.text = DRAW_PILE_NUM_TEXT + drawPileCards.Count.ToString();
+        }
+        
     }
 
     Card GetCardFromDrawPile()
     {
+        Debug.Log("here4");
         var card = drawPileCards.Dequeue();
         card.instance.SetActive(true);
         drawPileText.text = DRAW_PILE_NUM_TEXT + drawPileCards.Count.ToString();
@@ -234,7 +260,8 @@ public class CardEffects : MonoBehaviour {
     // Prepare states to play shuffle effect
     void ShuffleCardAnimation()
     {
-        for(int i = 0; i < shuffle_card_curve.Count; ++i)
+        Debug.Log("here5");
+        for (int i = 0; i < shuffle_card_curve.Count; ++i)
         {
             // Prepare card state to shuffle
             var curve = shuffle_card_curve[i];
@@ -258,6 +285,7 @@ public class CardEffects : MonoBehaviour {
 
     void ShufflePileCard()
     {
+        Debug.Log("here6");
         // All cards will be sent from discard pile to draw pile
         while (discardPileCards.Count > 0)
         {
@@ -270,6 +298,7 @@ public class CardEffects : MonoBehaviour {
 
     IEnumerator SendHandCards()
     {
+        Debug.Log("here7");
         ShufflePileCard();
         for (int i = 0; i < handNumAuto; ++i)
         {
@@ -281,6 +310,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called to check if the mouse is on the character 
     private void GetMouseOnPlayer()
     {
+        Debug.Log("here8");
         focusOnPlayer = null;
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         if (hit.collider != null && focusOnCard != -1)
@@ -317,7 +347,8 @@ public class CardEffects : MonoBehaviour {
     // This function is called when the arrow touches the character and the mouse has been clicked
     void PlayCard()
     {
-        if(focusOnCard != -1 && focusOnPlayer != null && Input.GetMouseButtonUp(0))
+        Debug.Log("here9");
+        if (focusOnCard != -1 && focusOnPlayer != null && Input.GetMouseButtonUp(0))
         {
             // Record the character which the card skilled on
             handCards[focusOnCard].targetPlayer = focusOnPlayer;
@@ -340,6 +371,7 @@ public class CardEffects : MonoBehaviour {
     // In card playing effect's first stage, the card rising up to the center of the screen
     void CardPlaying()
     {
+        Debug.Log("here10");
         for (int i = 0; i < playingCard.Count; ++i)
         {
             if (playingCard[i] == null || playingCard[i].isPlaying == true || playingCard[i].isDropping == true) continue;
@@ -378,7 +410,8 @@ public class CardEffects : MonoBehaviour {
     // Card shuffling effect
     void CardShuffling()
     {
-        for(int i = 0; i < shuffleCardsEffects.Count; ++i)
+        Debug.Log("here11");
+        for (int i = 0; i < shuffleCardsEffects.Count; ++i)
         {
             // Calculate card position on motion path by shuffle card curves
             var currentTime = Time.time;
@@ -418,6 +451,7 @@ public class CardEffects : MonoBehaviour {
     // In card playing effect's second stage, the card dropping to the discard pile
     void PlayCardEffect()
     {
+        Debug.Log("here12");
         var clear_flag = true;
         for (int i = 0; i < playingCard.Count; ++i)
         {
@@ -470,6 +504,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called to rotate cards to their goal directions calculated by combined states
     void CardRotate()
     {
+        Debug.Log("here13");
         for (int i = 0; i < handCards.Count; ++i)
         {
             Card card = handCards[i];
@@ -495,6 +530,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called to move cards to their goal positions calculated by combined states
     void CardMove()
     {
+        Debug.Log("here14");
         for (int i = 0; i < handCards.Count; i++)
         {
             Card card = handCards[i];
@@ -515,6 +551,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called to scale cards to their goal size calculated by combined states
     void CardScale()
     {
+        Debug.Log("here15");
         for (int i = 0; i < handCards.Count; i++)
         {
             Card card = handCards[i];
@@ -574,6 +611,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called to check if the mouse has clicked on a card
     void CheckMouseClickCard()
     {
+        Debug.Log("here16");
         if (Input.GetMouseButtonDown(0) && mouseClickCard == -1)
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -623,6 +661,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called for preparing to add a card in hand (draw)
     void AddHandCard()
     {
+        Debug.Log("here17");
         if (shufflingCard == true) return;
         if (drawPileCards.Count == 0)
         {
@@ -660,6 +699,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called for discarding all cards in hand
     void ClearHandCard()
     {
+        Debug.Log("here18");
         if (shufflingCard == true) return;
         if (Time.time - lastAddHandCardTime <= 0.5f) return;
         for (int i = 0; i < handCards.Count; i++)
@@ -692,6 +732,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called for preparing to drop card after playing effect
     void DropHandCard(int idx)
     {
+        Debug.Log("here19");
         if (lastFrameMouseOn != -1)
         {
             MouseOffCard(lastFrameMouseOn);
@@ -1027,6 +1068,6 @@ public class Card
     public GameObject targetPlayer;       // Record character the card skilled on
 
     //new attribute
-    public GameObject cardPrefab;
+    
     public string cardName;
 }
