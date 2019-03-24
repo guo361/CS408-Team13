@@ -128,6 +128,8 @@ public class CardEffects : MonoBehaviour {
 
     //new
     public List<Card> totalCards;
+    public GameObject enemy;
+
 
     public List<Card> deepCopy(List<Card> toCopy)
     {
@@ -200,7 +202,7 @@ public class CardEffects : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log("Akari");
+        
         
         // Shuffle animation has the highest priority to display
         if (shufflingCard == false)
@@ -219,7 +221,7 @@ public class CardEffects : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        Debug.Log("cyan");
+        
         if (shufflingCard == false)
         {
             CardRotate();
@@ -440,8 +442,10 @@ public class CardEffects : MonoBehaviour {
                 card.originHighY = card.instance.transform.position.y;
                 if (card.cardName == "Strike")
                 {
+                    
                     BadEgg.healthAmount = BadEgg.healthAmount - 0.1f;
                 }
+
                 // Display skill effect
                 if (card.targetPlayer != null)
                 {
