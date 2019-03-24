@@ -9,7 +9,7 @@ Temp/UnityLockfile
 Library/shadercompiler-UnityShaderCompiler.exe0.log
 *.log
 # This .gitignore file should be placed at the root of your Unity project directory
-
+.gitignore
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
