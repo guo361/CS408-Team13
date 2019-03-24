@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BadEgg : MonoBehaviour
 {
@@ -18,9 +19,10 @@ public class BadEgg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (healthAmount <= 0)
+        if (healthAmount <= 0.01)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
     }
 }
