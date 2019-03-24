@@ -16,6 +16,7 @@ public class Bad2 : MonoBehaviour
     {
         healthAmount = PlayerPrefs.GetFloat("EHealth2", 50.0f);
         healthAmount = healthAmount / 100;
+        PlayerPrefs.SetFloat("enemyHP", healthAmount);
         Debug.Log("enemy2" + healthAmount);
 
         turnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript09>();
@@ -32,6 +33,7 @@ public class Bad2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthAmount = PlayerPrefs.GetFloat("enemyHP");
         if (healthAmount <= 0)
         {
             Destroy(gameObject);

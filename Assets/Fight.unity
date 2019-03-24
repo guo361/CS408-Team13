@@ -639,6 +639,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f8f7ba42a0288449616df9e7de86b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnSystem: {fileID: 0}
+  turnClass:
+    playerGameObject: {fileID: 0}
+    isTurn: 0
+    wasTurnPrev: 0
+  isTurn: 0
+  moveKey: 0
 --- !u!50 &407065807
 Rigidbody2D:
   serializedVersion: 4
@@ -673,7 +680,7 @@ GameObject:
   - component: {fileID: 432317839}
   - component: {fileID: 432317840}
   m_Layer: 0
-  m_Name: 'HealthBarfight '
+  m_Name: HealthBarfight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2740,6 +2747,7 @@ MonoBehaviour:
     m_RotationOrder: 0
   enemy: {fileID: 0}
   enemyHP: {fileID: 0}
+  enemylife: 0
 --- !u!1 &2140048916
 GameObject:
   m_ObjectHideFlags: 0
