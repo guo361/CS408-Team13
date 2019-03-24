@@ -126,6 +126,8 @@ public class CardEffects : MonoBehaviour {
     private const string ENEMY_CHARA_NAME = "BadEgg";
     private const int HAND_CARD_LIMIT = 10;
 
+    //new
+    public List<Card> totalCards;
     
     void Awake()
     {
@@ -133,8 +135,9 @@ public class CardEffects : MonoBehaviour {
     }
     void Start()
     {
-        
-        
+        Debug.Log(cardTotalNum);
+        cardTotalNum = CardLibrary.Instance.cardNumber;
+        totalCards = new List<Card>(CardLibrary.Instance.myCards);
         // Init cards in draw pile
         InitDrawPileCards();
 
@@ -200,13 +203,13 @@ public class CardEffects : MonoBehaviour {
 
     void InitDrawPileCards()
     {
-        /*
+        
         for (int i = 0; i < cardTotalNum; ++i)
         {
             AddDrawPileCard();
-        }*/
+        }
         Debug.Log("here1");
-        AddDrawPileCard();
+        //AddDrawPileCard();
     }
 
     void AddDiscardPileCard(Card card)
@@ -227,8 +230,13 @@ public class CardEffects : MonoBehaviour {
         drawPileText.text = DRAW_PILE_NUM_TEXT + drawPileCards.Count.ToString();
         */
         Debug.Log("here3");
-        foreach (Card temp in CardLibrary.Instance.myCards)
-        {
+        
+        int RandomIndex = Random.Range(0, totalCards.Count);
+        Card temp = totalCards[RandomIndex];
+
+        totalCards.Remove(temp);
+        
+        
             temp.info = cardInfo;
             if (temp.cardName == "Strike")
             {
@@ -244,7 +252,7 @@ public class CardEffects : MonoBehaviour {
             temp.instance.SetActive(false);
             drawPileCards.Enqueue(temp);
             drawPileText.text = DRAW_PILE_NUM_TEXT + drawPileCards.Count.ToString();
-        }
+        
         
     }
 
@@ -492,6 +500,7 @@ public class CardEffects : MonoBehaviour {
                     // Play shuffle animation when the number of cards in the discard pile equals to the total card number
                     if (discardPileCards.Count == cardTotalNum)
                     {
+                        totalCards = new List<Card>(CardLibrary.Instance.myCards);
                         ShuffleCardAnimation();
                     }
                 }
