@@ -59,7 +59,9 @@
      <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\ToastController.cs" />
      <Compile Include="Assets\CardLibrary.cs" />
      <Compile Include="Assets\LowPolyNature\Scripts\Axe.cs" />
+     <Compile Include="Assets\LowPolyNature\Scripts\CharacterNameMessagePopup.cs" />
      <Compile Include="Assets\LowPolyNature\Scripts\Crate.cs" />
+     <Compile Include="Assets\LowPolyNature\Scripts\CreateCharacterButton.cs" />
      <Compile Include="Assets\LowPolyNature\Scripts\DamageSource.cs" />
      <Compile Include="Assets\LowPolyNature\Scripts\FirstAid.cs" />
      <Compile Include="Assets\LowPolyNature\Scripts\Food.cs" />
