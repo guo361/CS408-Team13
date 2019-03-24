@@ -1,7 +1,13 @@
 ﻿<Properties StartupConfiguration="{C4ACCCE6-7B5D-63C4-A065-2F20007C8B72}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LowPolyNature/Scripts/DamageSource.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CardGame/CardGameUIEffects/Assets/Scripts/CardEffects.cs">
     <Files>
-      <File FileName="Assets/LowPolyNature/Scripts/DamageSource.cs" Line="1" Column="1" />
+      <File FileName="Assets/GlobalComponent.cs" Line="12" Column="20" />
+      <File FileName="Assets/LowPolyNature/Scripts/PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets/CardLibrary.cs" Line="16" Column="6" />
+      <File FileName="Assets/script/FightScene/HealthBarFight.cs" Line="24" Column="6" />
+      <File FileName="Assets/LowPolyNature/Scripts/DamageSource.cs" Line="11" Column="31" />
+      <File FileName="Assets/script/FightScene/BadEgg.cs" Line="23" Column="9" />
+      <File FileName="Assets/CardGame/CardGameUIEffects/Assets/Scripts/CardEffects.cs" Line="979" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

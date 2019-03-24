@@ -361,6 +361,17 @@ public class CardEffects : MonoBehaviour {
             // Record the character which the card skilled on
             handCards[focusOnCard].targetPlayer = focusOnPlayer;
             playingCard.Add(handCards[focusOnCard]);
+
+            // TODO find the targeted card
+            if (handCards[focusOnCard].cardName == "Strike")
+
+                // TODO show the effect
+                BadEgg.healthAmount -= 0.1f;
+
+            else if (handCards[focusOnCard].cardName == "Guard")
+                Goodegg.healthAmount += 0.07f;
+
+            Debug.Log("strike!!");
             // Drop the card from hand
             DropHandCard(focusOnCard);
             focusOnCard = -1;
@@ -373,7 +384,9 @@ public class CardEffects : MonoBehaviour {
                     arrows[i].SetActive(false);
                 }
             }
+
         }
+
     }
 
     // In card playing effect's first stage, the card rising up to the center of the screen
