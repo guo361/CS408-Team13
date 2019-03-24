@@ -907,7 +907,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1570514173}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
@@ -963,8 +974,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1570514174}
-  - component: {fileID: 1570514173}
   - component: {fileID: 1570514175}
+  - component: {fileID: 1570514173}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -981,11 +992,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1570514172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dee5e72b1456d54bbceba19e377751a, type: 3}
+  m_Script: {fileID: 11500000, guid: f5f5c297ee6769b458f5a72dd7b4dfd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: {fileID: 1353499151}
-  message: {fileID: 0}
+  playername: {fileID: 1353499151}
+  message: {fileID: 305961397}
 --- !u!4 &1570514174
 Transform:
   m_ObjectHideFlags: 0
@@ -1009,11 +1020,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1570514172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96f617ab15a88342a39d3e80683bd2b, type: 3}
+  m_Script: {fileID: 11500000, guid: a060eb6733c76914ebfba75a9a4f9c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: {fileID: 0}
-  name: {fileID: 0}
+  message: {fileID: 305961397}
 --- !u!1 &1800109621
 GameObject:
   m_ObjectHideFlags: 0
