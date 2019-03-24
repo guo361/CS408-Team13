@@ -10,12 +10,14 @@ public class BossEgg : MonoBehaviour
     {
         healthAmount = PlayerPrefs.GetFloat("Boss", 150.0f);
         healthAmount = healthAmount / 100;
+        PlayerPrefs.SetFloat("enemyHP", healthAmount);
         Debug.Log("Boss" + healthAmount);
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthAmount = PlayerPrefs.GetFloat("enemyHP");
         if (healthAmount <= 0)
         {
             Destroy(gameObject);
