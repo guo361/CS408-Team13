@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 432317839}
   - component: {fileID: 432317840}
   m_Layer: 0
-  m_Name: HealthBarfight (1)
+  m_Name: 'HealthBarfight '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2738,6 +2738,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  enemy: {fileID: 0}
+  enemyHP: {fileID: 0}
 --- !u!1 &2140048916
 GameObject:
   m_ObjectHideFlags: 0

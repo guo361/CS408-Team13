@@ -129,7 +129,8 @@ public class CardEffects : MonoBehaviour {
     //new
     public List<Card> totalCards;
     public GameObject enemy;
-
+    public Text enemyHP;
+    public float enemylife;
 
     public List<Card> deepCopy(List<Card> toCopy)
     {
@@ -167,10 +168,14 @@ public class CardEffects : MonoBehaviour {
     }
     void Start()
     {
-        Debug.Log(cardTotalNum);
+        /*enemy = GameObject.Find("BadEgg");
+        Debug.Log(enemy);
+        enemyHP = enemy.GetComponent<Text>();
+        Debug.Log(enemyHP.text);
+        Debug.Log(cardTotalNum);*/
         cardTotalNum = CardLibrary.Instance.cardNumber;
         totalCards = deepCopy(CardLibrary.Instance.myCards);
-
+        enemylife = PlayerPrefs.GetFloat("enemyHP");
         // Init cards in draw pile
         InitDrawPileCards();
 
@@ -442,8 +447,9 @@ public class CardEffects : MonoBehaviour {
                 card.originHighY = card.instance.transform.position.y;
                 if (card.cardName == "Strike")
                 {
-                    
-                    BadEgg.healthAmount = BadEgg.healthAmount - 0.1f;
+
+                    enemylife = enemylife - 0.1f;
+                    PlayerPrefs.SetFloat("enemyHP", enemylife);
                 }
 
                 // Display skill effect
