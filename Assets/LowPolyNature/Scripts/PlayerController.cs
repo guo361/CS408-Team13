@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject diepopup;
     public Text dietext;
-    
+    public Text mName;
 
     // Use this for initialization
     void Start()
@@ -74,6 +74,27 @@ public class PlayerController : MonoBehaviour
         mHealthBar.SetValue((int) PlayerPrefs.GetFloat("Health",100.0f));
         Debug.Log("health in demo" + PlayerPrefs.GetFloat("Health", 100.0f));
         diepopup.SetActive(false);
+        mName = Hud.transform.Find("Bars_Panel/playerName").GetComponent<Text>();
+        mName.text = "Name: " + PlayerPrefs.GetString("Username");
+        if (PlayerPrefs.GetInt("haveCards") == 0)
+        {
+            CardLibrary.Instance.cardNumber = 6;
+            for(int i = 0; i < 4; i++)
+            {
+                Card newCard = new Card();
+              
+                newCard.cardName = "Strike";
+                CardLibrary.Instance.myCards.Add(newCard);
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                Card newCard = new Card();
+                
+                newCard.cardName = "Guard";
+                CardLibrary.Instance.myCards.Add(newCard);
+            }
+            PlayerPrefs.SetInt("haveCards", 1);
+        }
         /***
         mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
         mFoodBar.Min = 0;

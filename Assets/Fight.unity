@@ -2278,7 +2278,11 @@ MonoBehaviour:
     type: 3}
   arrowBodyPrefab: {fileID: 1443724389814156, guid: 1793153e035229140bdd63a88a28efb4,
     type: 3}
-  cardPrefab: {fileID: 1750386328052332, guid: 5e7c3b94297b9234c9245e27fb6dfc1c, type: 3}
+  cardPrefab: {fileID: 1750386328052332, guid: 43186b008138d2345a729eacf396daf4, type: 3}
+  strikecardPrefab: {fileID: 1750386328052332, guid: b156ed4ef197ca745b5c7c3b583e906c,
+    type: 3}
+  guardcardPrefab: {fileID: 1750386328052332, guid: 43186b008138d2345a729eacf396daf4,
+    type: 3}
   attackIconPrefab: {fileID: 1557688251390522, guid: 3c2a809ecfac5c7458496d19dd437fb0,
     type: 3}
   defenseIconPrefab: {fileID: 1263153628586066, guid: 84b963a79c0b9b9498ac9f8300c09003,
