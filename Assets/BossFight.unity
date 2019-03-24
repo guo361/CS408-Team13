@@ -639,6 +639,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f8f7ba42a0288449616df9e7de86b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnSystem: {fileID: 0}
+  turnClass:
+    playerGameObject: {fileID: 0}
+    isTurn: 0
+    wasTurnPrev: 0
+  isTurn: 0
+  moveKey: 0
 --- !u!50 &407065807
 Rigidbody2D:
   serializedVersion: 4
@@ -2279,6 +2286,10 @@ MonoBehaviour:
   arrowBodyPrefab: {fileID: 1443724389814156, guid: 1793153e035229140bdd63a88a28efb4,
     type: 3}
   cardPrefab: {fileID: 1750386328052332, guid: 5e7c3b94297b9234c9245e27fb6dfc1c, type: 3}
+  strikecardPrefab: {fileID: 1750386328052332, guid: b156ed4ef197ca745b5c7c3b583e906c,
+    type: 3}
+  guardcardPrefab: {fileID: 1750386328052332, guid: 43186b008138d2345a729eacf396daf4,
+    type: 3}
   attackIconPrefab: {fileID: 1557688251390522, guid: 3c2a809ecfac5c7458496d19dd437fb0,
     type: 3}
   defenseIconPrefab: {fileID: 1263153628586066, guid: 84b963a79c0b9b9498ac9f8300c09003,
@@ -2734,6 +2745,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  enemy: {fileID: 0}
+  enemyHP: {fileID: 0}
+  enemylife: 0
 --- !u!1 &2140048916
 GameObject:
   m_ObjectHideFlags: 0
