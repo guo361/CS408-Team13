@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     public void PlayGame() {
+        PlayerPrefs.SetInt("haveCards", 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        
 
     }
 

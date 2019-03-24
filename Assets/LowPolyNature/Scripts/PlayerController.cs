@@ -4,11 +4,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 
 {
-    public string scene;
+    public string fight1;
+    public string fight2;
+    public string fight3;
+    public string bossfight;
+
+
     #region Private Members
 
     private Animator _animator;
@@ -49,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject diepopup;
     public Text dietext;
-    
+    public Text mName;
 
     // Use this for initialization
     void Start()
@@ -61,10 +67,34 @@ public class PlayerController : MonoBehaviour
 
         mHealthBar = Hud.transform.Find("Bars_Panel/HealthBar").GetComponent<HealthBar>();
         mHealthBar.Min = 0;
-        mHealthBar.Max = Health;
-        startHealth = Health;
-        mHealthBar.SetValue(Health);
+        mHealthBar.Max = 100;
+        PlayerPrefs.SetFloat("Health", 100.0f);
+        startHealth = (int) PlayerPrefs.GetFloat("Health", 100.0f);
+
+        mHealthBar.SetValue((int) PlayerPrefs.GetFloat("Health",100.0f));
+        Debug.Log("health in demo" + PlayerPrefs.GetFloat("Health", 100.0f));
         diepopup.SetActive(false);
+        mName = Hud.transform.Find("Bars_Panel/playerName").GetComponent<Text>();
+        mName.text = "Name: " + PlayerPrefs.GetString("Username");
+        if (PlayerPrefs.GetInt("haveCards") == 0)
+        {
+            CardLibrary.Instance.cardNumber = 6;
+            for(int i = 0; i < 4; i++)
+            {
+                Card newCard = new Card();
+              
+                newCard.cardName = "Strike";
+                CardLibrary.Instance.myCards.Add(newCard);
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                Card newCard = new Card();
+                
+                newCard.cardName = "Guard";
+                CardLibrary.Instance.myCards.Add(newCard);
+            }
+            PlayerPrefs.SetInt("haveCards", 1);
+        }
         /***
         mFoodBar = Hud.transform.Find("Bars_Panel/FoodBar").GetComponent<HealthBar>();
         mFoodBar.Min = 0;
@@ -237,6 +267,7 @@ public class PlayerController : MonoBehaviour
             Health = 0;
 
         mHealthBar.SetValue(Health);
+        PlayerPrefs.SetFloat("Health", Health);
 
         if (IsDead)
         {
@@ -371,10 +402,25 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag("redEnemy"))
         {
 
-            SceneManager.LoadScene(scene);
+            SceneManager.LoadScene(fight1);
+        }else if (other.gameObject.CompareTag("stoneEnemy1"))
+        {
+            SceneManager.LoadScene(fight2);
+
+        }
+        else if (other.gameObject.CompareTag("stoneEnemy2"))
+        {
+            SceneManager.LoadScene(fight3);
+
+
+        }
+        else if (other.gameObject.CompareTag("boss"))
+        {
+            SceneManager.LoadScene(bossfight);
+
         }
         InteractableItemBase item = other.GetComponent<InteractableItemBase>();
 
