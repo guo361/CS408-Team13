@@ -18,7 +18,7 @@ public class BadEgg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthAmount = PlayerPrefs.GetFloat("enemyHP");
+       // healthAmount = PlayerPrefs.GetFloat("enemyHP");
         if (healthAmount <= 0.01)
         {
             Destroy(gameObject);
