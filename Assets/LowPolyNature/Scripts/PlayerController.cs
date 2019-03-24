@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 _moveDirection = Vector3.zero;
 
+    private Vector3 _currentPosition;
+
     private InventoryItemBase mCurrentItem = null;
 
     private HealthBar mHealthBar;
@@ -49,11 +51,21 @@ public class PlayerController : MonoBehaviour
 
     public GameObject diepopup;
     public Text dietext;
-    
+
+    //public Vector3 position;
+
+    public void SavePlayer() {
+        _currentPosition = transform.position;
+        print("test goes here");
+        //print(_currentPosition);
+        GlobalComponent.Instance.position = _currentPosition;
+    }
 
     // Use this for initialization
     void Start()
     {
+        print("test start here");
+        _currentPosition = GlobalComponent.Instance.position;
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
         Inventory.ItemUsed += Inventory_ItemUsed;
@@ -275,6 +287,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SavePlayer();
         if (IsDead)
         {
             diepopup.SetActive(true);

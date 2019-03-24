@@ -1,7 +1,9 @@
 ﻿<Properties StartupConfiguration="{C4ACCCE6-7B5D-63C4-A065-2F20007C8B72}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LowPolyNature/Scripts/DamageSource.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LowPolyNature/Scripts/PlayerController.cs">
     <Files>
-      <File FileName="Assets/LowPolyNature/Scripts/DamageSource.cs" Line="1" Column="1" />
+      <File FileName="Assets/backButton.cs" Line="12" Column="1" />
+      <File FileName="Assets/GlobalComponent.cs" Line="12" Column="20" />
+      <File FileName="Assets/LowPolyNature/Scripts/PlayerController.cs" Line="424" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
