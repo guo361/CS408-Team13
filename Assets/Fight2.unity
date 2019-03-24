@@ -490,6 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goodp: {fileID: 1179418412}
+  HSM: {fileID: 407065806}
 --- !u!222 &382561714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -514,7 +515,7 @@ GameObject:
   - component: {fileID: 407065806}
   m_Layer: 0
   m_Name: GoodEgg
-  m_TagString: Untagged
+  m_TagString: hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -636,7 +637,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 407065801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f8f7ba42a0288449616df9e7de86b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a8e05964f53df242ad94f98a6d04d46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!50 &407065807
@@ -2279,6 +2280,8 @@ MonoBehaviour:
   arrowBodyPrefab: {fileID: 1443724389814156, guid: 1793153e035229140bdd63a88a28efb4,
     type: 3}
   cardPrefab: {fileID: 1750386328052332, guid: 5e7c3b94297b9234c9245e27fb6dfc1c, type: 3}
+  attackcardPrefab: {fileID: 0}
+  defencecardPrefab: {fileID: 0}
   attackIconPrefab: {fileID: 1557688251390522, guid: 3c2a809ecfac5c7458496d19dd437fb0,
     type: 3}
   defenseIconPrefab: {fileID: 1263153628586066, guid: 84b963a79c0b9b9498ac9f8300c09003,

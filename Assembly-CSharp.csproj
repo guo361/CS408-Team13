@@ -65,6 +65,7 @@
     <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\CardEffects.cs" />
     <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\EffectController.cs" />
     <Compile Include="Assets\CardGame\CardGameUIEffects\Assets\Scripts\ToastController.cs" />
+    <Compile Include="Assets\CardLibrary.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\Axe.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\Crate.cs" />
     <Compile Include="Assets\LowPolyNature\Scripts\DamageSource.cs" />
@@ -97,6 +98,8 @@
     <Compile Include="Assets\script\FightScene\HealthBarFight.cs" />
     <Compile Include="Assets\script\FightScene\HealthE2.cs" />
     <Compile Include="Assets\script\FightScene\HealthE3.cs" />
+    <Compile Include="Assets\script\FightScene\Herobasic.cs" />
+    <Compile Include="Assets\script\FightScene\Turn\turnSystemScript09.cs" />
     <Compile Include="Assets\script\Main\Boss.cs" />
     <Compile Include="Assets\script\Main\Enemy.cs" />
     <Compile Include="Assets\script\Main\Enemy2.cs" />
@@ -108,6 +111,15 @@
     <None Include="Assets\Aekashics Librarium - Megapack III\Terms of use.txt" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Rock Golem\readMe.txt" />
     <None Include="Assets\MeshSmith\ToonMonsterII\Toon Rock\readMe.txt" />
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/xu_83/Documents/GitHub/CS408-Team13/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>C:/Users/xu_83/Documents/GitHub/CS408-Team13/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>C:/Users/xu_83/Documents/GitHub/CS408-Team13/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/xu_83/Documents/GitHub/CS408-Team13/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
