@@ -18,11 +18,11 @@ public class Goodegg : MonoBehaviour
         healthAmount = healthAmount / 100;
         Debug.Log("health in fight start" + healthAmount);
 
-        turnSystem = GameObject.Find("Turn-basedSystem").GetComponent< turnSystemScript09 >();
+        turnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript09>();
 
-        foreach(TurnClass09 tc in turnSystem.playersGroup)
+        foreach (TurnClass09 tc in turnSystem.playersGroup)
         {
-            if(tc.playerGameObject.name == gameObject.name)
+            if (tc.playerGameObject.name == gameObject.name)
             {
                 turnClass = tc;
             }
@@ -32,7 +32,7 @@ public class Goodegg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(healthAmount <= 0)
+        if (healthAmount <= 0)
         {
             Destroy(gameObject);
         }
