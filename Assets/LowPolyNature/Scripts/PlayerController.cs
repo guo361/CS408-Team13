@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     public GameObject diepopup;
     public Text dietext;
     public Text mName;
-
+    public int Health;
     // Use this for initialization
     void Start()
     {
@@ -68,9 +68,9 @@ public class PlayerController : MonoBehaviour
         mHealthBar = Hud.transform.Find("Bars_Panel/HealthBar").GetComponent<HealthBar>();
         mHealthBar.Min = 0;
         mHealthBar.Max = 100;
-        PlayerPrefs.SetFloat("Health", 100.0f);
-        startHealth = (int) PlayerPrefs.GetFloat("Health", 100.0f);
 
+        startHealth = 100;
+        Health = (int)PlayerPrefs.GetFloat("Health");
         mHealthBar.SetValue((int) PlayerPrefs.GetFloat("Health",100.0f));
         Debug.Log("health in demo" + PlayerPrefs.GetFloat("Health", 100.0f));
         diepopup.SetActive(false);
@@ -192,8 +192,8 @@ public class PlayerController : MonoBehaviour
 
     #region Health 
 
-    [Tooltip("Amount of health")]
-    public int Health = 100;
+    
+    
 
 
     [Tooltip("Rate in seconds in which the hunger increases")]
@@ -461,6 +461,12 @@ public class PlayerController : MonoBehaviour
 
     public void RestartButton()
     {
+        PlayerPrefs.SetInt("haveCards", 0);
+        PlayerPrefs.SetInt("enemy1dead", 0);
+        PlayerPrefs.SetInt("enemy2dead", 0);
+        PlayerPrefs.SetInt("enemy3dead", 0);
+        PlayerPrefs.SetInt("bossdead", 0);
+        PlayerPrefs.SetFloat("Health", 100.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
