@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 
@@ -56,10 +56,23 @@ public class PlayerController : MonoBehaviour
     public GameObject diepopup;
     public Text dietext;
     public Text mName;
+    public int Health;
 
+    public GameObject enemy1;
     // Use this for initialization
     void Start()
     {
+        /*
+        if (PlayerPrefs.GetInt("enemy1dead") == 1)
+        {
+            Debug.Log("fuckup");
+            Destroy(enemy1);
+        }*/
+        if (PlayerPrefs.GetInt("infight") == 1)
+        {
+            transform.rotation = PlayerPosition.Instance.rotation;
+            transform.position = PlayerPosition.Instance.position;
+        }
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
         Inventory.ItemUsed += Inventory_ItemUsed;
@@ -68,9 +81,9 @@ public class PlayerController : MonoBehaviour
         mHealthBar = Hud.transform.Find("Bars_Panel/HealthBar").GetComponent<HealthBar>();
         mHealthBar.Min = 0;
         mHealthBar.Max = 100;
-        //PlayerPrefs.SetFloat("Health", 100.0f);
-        startHealth = (int) PlayerPrefs.GetFloat("Health", 100.0f);
 
+        startHealth = 100;
+        Health = (int)PlayerPrefs.GetFloat("Health");
         mHealthBar.SetValue((int) PlayerPrefs.GetFloat("Health",100.0f));
         Debug.Log("health in demo" + PlayerPrefs.GetFloat("Health", 100.0f));
         diepopup.SetActive(false);
@@ -82,14 +95,14 @@ public class PlayerController : MonoBehaviour
             for(int i = 0; i < 4; i++)
             {
                 Card newCard = new Card();
-              
+
                 newCard.cardName = "Strike";
                 CardLibrary.Instance.myCards.Add(newCard);
             }
             for (int i = 0; i < 2; i++)
             {
                 Card newCard = new Card();
-                
+
                 newCard.cardName = "Guard";
                 CardLibrary.Instance.myCards.Add(newCard);
             }
@@ -190,10 +203,10 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    #region Health 
+    #region Health
 
-    [Tooltip("Amount of health")]
-    public int Health = 100;
+
+
 
 
     [Tooltip("Rate in seconds in which the hunger increases")]
@@ -402,23 +415,35 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("redEnemy"))
+        if (other.gameObject.CompareTag("redEnemy") && PlayerPrefs.GetInt("infight") != 1)
         {
-
+            PlayerPrefs.SetInt("infight", 1);
+            Debug.Log("nowayjskdfffffffffffffffffffffffffffffffff");
+            PlayerPosition.Instance.position = transform.position;
+            PlayerPosition.Instance.rotation = transform.rotation;
             SceneManager.LoadScene(fight1);
-        }else if (other.gameObject.CompareTag("stoneEnemy1"))
+        }else if (other.gameObject.CompareTag("stoneEnemy1") && PlayerPrefs.GetInt("infight") != 1)
         {
+            PlayerPrefs.SetInt("infight", 1);
+            PlayerPosition.Instance.position = transform.position;
+            PlayerPosition.Instance.rotation = transform.rotation;
             SceneManager.LoadScene(fight2);
 
         }
-        else if (other.gameObject.CompareTag("stoneEnemy2"))
+        else if (other.gameObject.CompareTag("stoneEnemy2") && PlayerPrefs.GetInt("infight") != 1)
         {
+            PlayerPrefs.SetInt("infight", 1);
+            PlayerPosition.Instance.position = transform.position;
+            PlayerPosition.Instance.rotation = transform.rotation;
             SceneManager.LoadScene(fight3);
 
 
         }
-        else if (other.gameObject.CompareTag("boss"))
+        else if (other.gameObject.CompareTag("boss") && PlayerPrefs.GetInt("infight") != 1)
         {
+            PlayerPrefs.SetInt("infight", 1);
+            PlayerPosition.Instance.position = transform.position;
+            PlayerPosition.Instance.rotation = transform.rotation;
             SceneManager.LoadScene(bossfight);
 
         }
@@ -436,7 +461,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-       
+
 
 
     }
@@ -456,11 +481,20 @@ public class PlayerController : MonoBehaviour
         Application.Quit();
 //        UnityEditor.EditorApplication.isPlaying = false;
 //        Debug.Log("Quit!");
-        
+
     }
 
     public void RestartButton()
     {
+        CardLibrary.Instance.cardNumber = 0;
+        CardLibrary.Instance.myCards = new List<Card>();
+        PlayerPrefs.SetInt("infight", 0);
+        PlayerPrefs.SetInt("haveCards", 0);
+        PlayerPrefs.SetInt("enemy1dead", 0);
+        PlayerPrefs.SetInt("enemy2dead", 0);
+        PlayerPrefs.SetInt("enemy3dead", 0);
+        PlayerPrefs.SetInt("bossdead", 0);
+        PlayerPrefs.SetFloat("Health", 100.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

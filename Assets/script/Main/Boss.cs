@@ -20,6 +20,7 @@ public class Boss : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("bossdead") == 1)
         {
+            PlayerPrefs.SetInt("infight", 0);
             Destroy(gameObject);
         }
     }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     public void PlayGame() {
+        PlayerPrefs.SetInt("infight", 0);
         PlayerPrefs.SetInt("haveCards", 0);
         PlayerPrefs.SetInt("enemy1dead", 0);
         PlayerPrefs.SetInt("enemy2dead", 0);

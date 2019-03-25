@@ -62,7 +62,7 @@ public class CardEffects : MonoBehaviour {
     [Tooltip("Number of arrow parts, the head is the last one")]
     public int arrowsNum = 11;
     [Tooltip("Total Number of cards")]
-    public int cardTotalNum = CardLibrary.Instance.cardNumber;
+    public int cardTotalNum;
     [Tooltip("Number of cards sent to hand automatically")]
     public int handNumAuto = 5;
     [Tooltip("The minimum card scale use by drop and shuffle effects")]
