@@ -398,6 +398,8 @@ public class CardEffects : MonoBehaviour {
     // This function is called when the arrow touches the character and the mouse has been clicked
     void PlayCard()
     {
+        if (Goodegg.mana == 0)
+            return;
         Debug.Log("suki9");
         if (focusOnCard != -1 && focusOnPlayer != null && Input.GetMouseButtonUp(0))
         {
@@ -450,6 +452,7 @@ public class CardEffects : MonoBehaviour {
 
                     enemylife = enemylife - 0.1f;
                     PlayerPrefs.SetFloat("enemyHP", enemylife);
+                    Goodegg.mana = Goodegg.mana - 1;
                 }
 
                 // Display skill effect
@@ -802,6 +805,7 @@ public class CardEffects : MonoBehaviour {
                 arrows[i].SetActive(false);
             }
         }
+        Goodegg.mana = Goodegg.totalMana;
     }
 
     // This function is called for preparing to drop card after playing effect
