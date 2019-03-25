@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 
