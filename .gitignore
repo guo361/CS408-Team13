@@ -70,3 +70,7 @@ Library/assetDatabase3
 Library/metadata/00/0000000000000000c000000000000000
 Library/metadata/3f/3f769344a18165840a13d2288152bea6
 *.dll
+*.ide
+*.ide-shm
+*.ide-wal
+*.log
