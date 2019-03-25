@@ -398,9 +398,9 @@ public class CardEffects : MonoBehaviour {
     // This function is called when the arrow touches the character and the mouse has been clicked
     void PlayCard()
     {
-        Debug.Log("suki9");
         if (Goodegg.mana == 0)
             return;
+        Debug.Log("suki9");
         if (focusOnCard != -1 && focusOnPlayer != null && Input.GetMouseButtonUp(0))
         {
             // Record the character which the card skilled on
