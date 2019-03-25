@@ -399,6 +399,8 @@ public class CardEffects : MonoBehaviour {
     void PlayCard()
     {
         Debug.Log("suki9");
+        if (Goodegg.mana == 0)
+            return;
         if (focusOnCard != -1 && focusOnPlayer != null && Input.GetMouseButtonUp(0))
         {
             // Record the character which the card skilled on
@@ -450,6 +452,7 @@ public class CardEffects : MonoBehaviour {
 
                     enemylife = enemylife - 0.1f;
                     PlayerPrefs.SetFloat("enemyHP", enemylife);
+                    Goodegg.mana = Goodegg.mana - 1;
                 }
 
                 // Display skill effect
@@ -802,6 +805,7 @@ public class CardEffects : MonoBehaviour {
                 arrows[i].SetActive(false);
             }
         }
+        Goodegg.mana = Goodegg.totalMana;
     }
 
     // This function is called for preparing to drop card after playing effect

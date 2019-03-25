@@ -54,25 +54,3 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-*.log
-*.ide-wal
-.vs/CS408-Team13/v15/.suo
-*.ide
-*.ide-shm
-*.ide-wal
-*.csproj
-*.sln
-Library/assetDatabase3
-*.txt
-*.backup
-*.cache
-Library/metadata/00/0000000000000000c000000000000000
-Library/metadata/3f/3f769344a18165840a13d2288152bea6
-*.dll
-.vs/CS408-Team13/v15/.suo
-*.ide
-*.ide-shm
-*.ide-wal
-Library/assetDatabase3
-Library/metadata/1f/1f8a5d3ad93518541b7c9ed3d0bb121f
-Library/metadata/00/00000000000000003000000000000000
