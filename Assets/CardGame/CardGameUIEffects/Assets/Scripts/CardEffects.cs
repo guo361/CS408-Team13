@@ -161,11 +161,11 @@ public class CardEffects : MonoBehaviour {
         }
         return fresh;
     }
-
+    /*
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
-    }
+    }*/
     void Start()
     {
         /*enemy = GameObject.Find("BadEgg");
