@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Boss : MonoBehaviour
 {
     public static int Bhealth;
@@ -9,16 +10,17 @@ public class Boss : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetFloat("Boss", 150.0f);
-        Bhealth = (int)PlayerPrefs.GetFloat("Boss", 150.0f);
-        Debug.Log("Boss health in demo" + PlayerPrefs.GetFloat("Boss", 150.0f));
+        Bhealth = (int)PlayerPrefs.GetFloat("Boss");
+        
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (Bhealth == 0)
+        if (PlayerPrefs.GetInt("bossdead") == 1)
         {
+            PlayerPrefs.SetInt("infight", 0);
             Destroy(gameObject);
         }
     }
