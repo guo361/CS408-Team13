@@ -450,7 +450,7 @@ public class CardEffects : MonoBehaviour {
                 if (card.cardName == "Strike")
                 {
 
-                    enemylife = enemylife - 0.1f;
+                    enemylife = enemylife - 0.5f;
                     PlayerPrefs.SetFloat("enemyHP", enemylife);
                     Goodegg.mana = Goodegg.mana - 1;
                 }

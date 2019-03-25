@@ -58,6 +58,10 @@ public class PlayerController : MonoBehaviour
     public Text mName;
     public int Health;
 
+    public int enemygg1;
+    public int enemygg2;
+    public int enemygg3;
+
     public GameObject enemy1;
     // Use this for initialization
     void Start()
@@ -68,6 +72,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("fuckup");
             Destroy(enemy1);
         }*/
+            
         if (PlayerPrefs.GetInt("infight") == 1)
         {
             transform.rotation = PlayerPosition.Instance.rotation;
@@ -236,6 +241,19 @@ public class PlayerController : MonoBehaviour
             return Health == 0;
         }
     }
+    public bool IsWin
+    {
+        get {
+            Debug.Log("is win@@@@@@@@@@@@@@@@@@");
+
+
+
+            if (enemygg1 == 1 && enemygg2 ==1 && enemygg3 ==1)
+                return true;
+            else
+                return false;
+        }
+    }
 
     public bool IsArmed
     {
@@ -319,10 +337,24 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        enemygg1 = PlayerPrefs.GetInt("enemy1dead");
+        enemygg2 = PlayerPrefs.GetInt("enemy2dead");
+        enemygg3 = PlayerPrefs.GetInt("enemy3dead");
+
+
+        Debug.Log("%%%%%%%%%%%%%%%%%%");
+        Debug.Log(enemygg1);
+        Debug.Log(enemygg2);
+        Debug.Log(enemygg3);
+
+
         if (IsDead)
         {
             diepopup.SetActive(true);
             dietext.text = "You Died ! ";
+        }
+        if (IsWin) {
+            SceneManager.LoadScene(8);
         }
         if (!IsDead && mIsControlEnabled)
         {
