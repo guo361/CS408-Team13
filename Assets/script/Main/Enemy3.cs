@@ -9,15 +9,15 @@ public class Enemy3 : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetFloat("EHealth3", 50.0f);
-        Ehealth3 = (int)PlayerPrefs.GetFloat("EHealth3", 50.0f);
-        Debug.Log("enemy 3 health in demo " + PlayerPrefs.GetFloat("EHealth3", 50.0f));
+        Ehealth3 = (int)PlayerPrefs.GetFloat("EHealth3");
+        
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (Ehealth3 == 0)
+        if (PlayerPrefs.GetInt("enemy3dead") == 1)
         {
             Destroy(gameObject);
         }

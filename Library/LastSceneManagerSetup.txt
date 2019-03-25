@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Fight3.unity
+- path: Assets/start_menu.unity
   isLoaded: 1
   isActive: 1

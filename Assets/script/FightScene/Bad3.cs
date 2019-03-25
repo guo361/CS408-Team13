@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bad3 : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Bad3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = PlayerPrefs.GetFloat("EHealth3", 50.0f);
+        healthAmount = PlayerPrefs.GetFloat("EHealth3");
         healthAmount = healthAmount / 100;
         PlayerPrefs.SetFloat("enemyHP", healthAmount);
         Debug.Log("enemy3" + healthAmount);
@@ -32,9 +33,11 @@ public class Bad3 : MonoBehaviour
     void Update()
     {
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
-        if (healthAmount <= 0)
+        if (healthAmount <= 0.01)
         {
+            PlayerPrefs.SetInt("enemy3dead", 1);
             Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
 
         isTurn = turnClass.isTurn;

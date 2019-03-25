@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossEgg : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class BossEgg : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = PlayerPrefs.GetFloat("Boss", 150.0f);
+        healthAmount = PlayerPrefs.GetFloat("Boss");
         healthAmount = healthAmount / 100;
         PlayerPrefs.SetFloat("enemyHP", healthAmount);
         Debug.Log("Boss" + healthAmount);
@@ -35,9 +36,11 @@ public class BossEgg : MonoBehaviour
     void Update()
     {
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
-        if (healthAmount <= 0)
+        if (healthAmount <= 0.01)
         {
+            PlayerPrefs.SetInt("bossdead", 1);
             Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
 
         isTurn = turnClass.isTurn;
