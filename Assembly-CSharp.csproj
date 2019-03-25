@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C4ACCCE6-7B5D-63C4-A065-2F20007C8B72}</ProjectGuid>
+    <ProjectGuid>{B7962EEB-0C84-CE16-226B-72B16064EE6D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -80,6 +80,7 @@
      <Compile Include="Assets\LowPolyNature\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\LowPolyNature\Scripts\PlayerController.cs" />
      <Compile Include="Assets\LowPolyNature\Scripts\PlayerFollow.cs" />
+     <Compile Include="Assets\LowPolyNature\Scripts\PlayerPosition.cs" />
      <Compile Include="Assets\LowPolyNature\Scripts\Sheep.cs" />
      <Compile Include="Assets\script\Cards\Card.cs" />
      <Compile Include="Assets\script\Cards\CardViz.cs" />
@@ -94,6 +95,7 @@
      <Compile Include="Assets\script\FightScene\HealthE2.cs" />
      <Compile Include="Assets\script\FightScene\HealthE3.cs" />
      <Compile Include="Assets\script\FightScene\Herobasic.cs" />
+     <Compile Include="Assets\script\FightScene\ManaCount.cs" />
      <Compile Include="Assets\script\FightScene\Turn\turnSystemScript09.cs" />
      <Compile Include="Assets\script\Main\Boss.cs" />
      <Compile Include="Assets\script\Main\Enemy.cs" />
@@ -107,19 +109,19 @@
      <None Include="Assets\MeshSmith\ToonMonsterII\Toon Rock Golem\readMe.txt" />
      <None Include="Assets\MeshSmith\ToonMonsterII\Toon Rock\readMe.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/CS408-Team13/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>E:/temp/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>D:/CS408-Team13/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>E:/temp/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>D:/CS408-Team13/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>E:/temp/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/CS408-Team13/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>E:/temp/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>D:/CS408-Team13/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>E:/temp/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -323,13 +325,13 @@
  <HintPath>D:/unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>D:/CS408-Team13/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>E:/temp/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>D:/CS408-Team13/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>E:/temp/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>D:/CS408-Team13/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>E:/temp/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

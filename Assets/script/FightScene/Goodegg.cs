@@ -10,14 +10,16 @@ public class Goodegg : MonoBehaviour
     public TurnClass09 turnClass;
     public bool isTurn = false;
     public KeyCode moveKey;
-
+    public static int mana;
+    public static int totalMana;
     // Start is called before the first frame update
     void Start()
     {
         healthAmount = PlayerPrefs.GetFloat("Health", 100.0f);
         healthAmount = healthAmount / 100;
         Debug.Log("health in fight start" + healthAmount);
-
+        mana = 3;
+        totalMana = 3;
         turnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript09>();
 
         foreach (TurnClass09 tc in turnSystem.playersGroup)
