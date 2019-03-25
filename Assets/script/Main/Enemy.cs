@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         PlayerPrefs.SetFloat("EHealth1", 50.0f);
         Ehealth = (int)PlayerPrefs.GetFloat("EHealth1");
         
@@ -19,6 +20,8 @@ public class Enemy : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("enemy1dead") == 1)
         {
+            PlayerPrefs.SetInt("infight", 0);
+
             Destroy(gameObject);
         }
     }

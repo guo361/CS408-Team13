@@ -19,6 +19,7 @@ public class Enemy3 : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("enemy3dead") == 1)
         {
+            PlayerPrefs.SetInt("infight", 0);
             Destroy(gameObject);
         }
     }

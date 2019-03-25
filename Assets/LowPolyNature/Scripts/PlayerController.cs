@@ -57,9 +57,22 @@ public class PlayerController : MonoBehaviour
     public Text dietext;
     public Text mName;
     public int Health;
+
+    public GameObject enemy1;
     // Use this for initialization
     void Start()
     {
+        /*
+        if (PlayerPrefs.GetInt("enemy1dead") == 1)
+        {
+            Debug.Log("fuckup");
+            Destroy(enemy1);
+        }*/
+        if (PlayerPrefs.GetInt("infight") == 1)
+        {
+            transform.rotation = PlayerPosition.Instance.rotation;
+            transform.position = PlayerPosition.Instance.position;
+        }
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
         Inventory.ItemUsed += Inventory_ItemUsed;
@@ -402,23 +415,35 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("redEnemy"))
+        if (other.gameObject.CompareTag("redEnemy") && PlayerPrefs.GetInt("infight") != 1)
         {
-
+            PlayerPrefs.SetInt("infight", 1);
+            Debug.Log("nowayjskdfffffffffffffffffffffffffffffffff");
+            PlayerPosition.Instance.position = transform.position;
+            PlayerPosition.Instance.rotation = transform.rotation;
             SceneManager.LoadScene(fight1);
-        }else if (other.gameObject.CompareTag("stoneEnemy1"))
+        }else if (other.gameObject.CompareTag("stoneEnemy1") && PlayerPrefs.GetInt("infight") != 1)
         {
+            PlayerPrefs.SetInt("infight", 1);
+            PlayerPosition.Instance.position = transform.position;
+            PlayerPosition.Instance.rotation = transform.rotation;
             SceneManager.LoadScene(fight2);
 
         }
-        else if (other.gameObject.CompareTag("stoneEnemy2"))
+        else if (other.gameObject.CompareTag("stoneEnemy2") && PlayerPrefs.GetInt("infight") != 1)
         {
+            PlayerPrefs.SetInt("infight", 1);
+            PlayerPosition.Instance.position = transform.position;
+            PlayerPosition.Instance.rotation = transform.rotation;
             SceneManager.LoadScene(fight3);
 
 
         }
-        else if (other.gameObject.CompareTag("boss"))
+        else if (other.gameObject.CompareTag("boss") && PlayerPrefs.GetInt("infight") != 1)
         {
+            PlayerPrefs.SetInt("infight", 1);
+            PlayerPosition.Instance.position = transform.position;
+            PlayerPosition.Instance.rotation = transform.rotation;
             SceneManager.LoadScene(bossfight);
 
         }
@@ -461,6 +486,9 @@ public class PlayerController : MonoBehaviour
 
     public void RestartButton()
     {
+        CardLibrary.Instance.cardNumber = 0;
+        CardLibrary.Instance.myCards = new List<Card>();
+        PlayerPrefs.SetInt("infight", 0);
         PlayerPrefs.SetInt("haveCards", 0);
         PlayerPrefs.SetInt("enemy1dead", 0);
         PlayerPrefs.SetInt("enemy2dead", 0);
