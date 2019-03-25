@@ -82,14 +82,14 @@ public class PlayerController : MonoBehaviour
             for(int i = 0; i < 4; i++)
             {
                 Card newCard = new Card();
-              
+
                 newCard.cardName = "Strike";
                 CardLibrary.Instance.myCards.Add(newCard);
             }
             for (int i = 0; i < 2; i++)
             {
                 Card newCard = new Card();
-                
+
                 newCard.cardName = "Guard";
                 CardLibrary.Instance.myCards.Add(newCard);
             }
@@ -190,10 +190,10 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    #region Health 
+    #region Health
 
-    
-    
+
+
 
 
     [Tooltip("Rate in seconds in which the hunger increases")]
@@ -436,7 +436,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-       
+
 
 
     }
@@ -456,7 +456,7 @@ public class PlayerController : MonoBehaviour
         Application.Quit();
 //        UnityEditor.EditorApplication.isPlaying = false;
 //        Debug.Log("Quit!");
-        
+
     }
 
     public void RestartButton()

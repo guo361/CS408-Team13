@@ -9,6 +9,7 @@ TagManager:
   - stoneEnemy1
   - boss
   - stoneEnemy2
+  - hero
   layers:
   - Default
   - TransparentFX
