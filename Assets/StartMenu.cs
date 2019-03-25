@@ -11,6 +11,7 @@ public class StartMenu : MonoBehaviour
         PlayerPrefs.SetInt("enemy2dead", 0);
         PlayerPrefs.SetInt("enemy3dead", 0);
         PlayerPrefs.SetInt("bossdead", 0);
+        PlayerPrefs.SetFloat("Health", 100.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         
 
