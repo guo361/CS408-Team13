@@ -2,3 +2,7 @@
 *.log
 Temp/UnityLockfile
 *.log
+*.ide
+*.ide-shm
+*.ide-wal
+*.log
