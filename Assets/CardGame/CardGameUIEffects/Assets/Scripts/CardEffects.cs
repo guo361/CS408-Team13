@@ -486,8 +486,9 @@ public class CardEffects : MonoBehaviour {
                 }
                 else if (card.cardName == "Lifesteal")
                 {
-                    enemylife = enemylife - 0.12f;
+                    enemylife = enemylife - 0.08f;
                     Goodegg.healthAmount = Goodegg.healthAmount + 0.07f;
+                    PlayerPrefs.SetFloat("enemyHP", enemylife);
                     if (Goodegg.healthAmount >= 0.99)
                     {
                         Goodegg.healthAmount = 1.0f;
