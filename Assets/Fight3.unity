@@ -868,7 +868,6 @@ MonoBehaviour:
     playerGameObject: {fileID: 0}
     isTurn: 0
     wasTurnPrev: 0
-  isTurn: 0
   moveKey: 32
 --- !u!50 &407065807
 Rigidbody2D:
@@ -2884,6 +2883,10 @@ MonoBehaviour:
   strikecardPrefab: {fileID: 1750386328052332, guid: b156ed4ef197ca745b5c7c3b583e906c,
     type: 3}
   guardcardPrefab: {fileID: 1750386328052332, guid: 43186b008138d2345a729eacf396daf4,
+    type: 3}
+  lifestealcardPrefab: {fileID: 1750386328052332, guid: b2eef0c833cb26d4eb60bd519f583f69,
+    type: 3}
+  swiftcardPrefab: {fileID: 1750386328052332, guid: 2be396c53c86dbf4a8fa805c3c774ee7,
     type: 3}
   attackIconPrefab: {fileID: 1557688251390522, guid: 3c2a809ecfac5c7458496d19dd437fb0,
     type: 3}

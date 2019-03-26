@@ -58,20 +58,23 @@ public class BadEgg : MonoBehaviour
         isTurn = turnClass.isTurn;
         if (isTurn)
         {
+            
             StartCoroutine("WaitAndMove");
+            
         }
     }
 
 
     IEnumerator WaitAndMove()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(1f);
         //TODO: enemy turn
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
-
+        Goodegg.shield = 0;
         StopCoroutine("WaitAndMove");
+        
     }
     public void addNewCard()
     {

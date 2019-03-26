@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
         mName.text = "Name: " + PlayerPrefs.GetString("Username");
         if (PlayerPrefs.GetInt("haveCards") == 0)
         {
-            CardLibrary.Instance.cardNumber = 6;
+            CardLibrary.Instance.cardNumber = 10;
             for(int i = 0; i < 4; i++)
             {
                 Card newCard = new Card();
@@ -104,6 +104,21 @@ public class PlayerController : MonoBehaviour
                 Card newCard = new Card();
 
                 newCard.cardName = "Guard";
+                CardLibrary.Instance.myCards.Add(newCard);
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                Card newCard = new Card();
+
+                newCard.cardName = "Lifesteal";
+                CardLibrary.Instance.myCards.Add(newCard);
+            }
+            for (int i = 0; i < 2; i++)
+            {
+               
+                Card newCard = new Card();
+
+                newCard.cardName = "Swift";
                 CardLibrary.Instance.myCards.Add(newCard);
             }
             PlayerPrefs.SetInt("haveCards", 1);

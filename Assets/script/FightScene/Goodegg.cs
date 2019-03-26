@@ -2,25 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Goodegg : MonoBehaviour
 {
     public static float healthAmount;
     public turnSystemScript09 turnSystem;
-    public TurnClass09 turnClass;
+    public static TurnClass09 turnClass;
     public static bool isTurn = false;
-    public KeyCode moveKey;
+
+  //  public KeyCode moveKey;
     public static int mana;
     public static int totalMana;
+    public static int shield;
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = PlayerPrefs.GetFloat("Health", 100.0f);
+        healthAmount = PlayerPrefs.GetFloat("Health", 100.00f);
         healthAmount = healthAmount / 100;
         Debug.Log("health in fight start" + healthAmount);
        
         totalMana = 3;
         mana = totalMana;
+        shield = 0;
         turnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript09>();
 
         foreach (TurnClass09 tc in turnSystem.playersGroup)
@@ -30,6 +34,7 @@ public class Goodegg : MonoBehaviour
                 turnClass = tc;
             }
         }
+       
     }
 
     // Update is called once per frame
@@ -42,15 +47,16 @@ public class Goodegg : MonoBehaviour
 
         isTurn = turnClass.isTurn;
 
-        if (isTurn)
+    /*    if (isTurn)
         {
-            if (Input.GetKeyDown(moveKey))
-            {
+           
+           if (Input.GetKeyDown(moveKey))
+           {
                 //TODO: hero attact here
-                isTurn = false;
-                turnClass.isTurn = isTurn;
-                turnClass.wasTurnPrev = true;
-            }
-        }
+               isTurn = false;
+               turnClass.isTurn = isTurn;
+               turnClass.wasTurnPrev = true;
+           }
+        }*/
     }
 }
