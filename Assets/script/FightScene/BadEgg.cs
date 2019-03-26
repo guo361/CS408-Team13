@@ -65,8 +65,10 @@ public class BadEgg : MonoBehaviour
 
     IEnumerator WaitAndMove()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(1f);
         //TODO: enemy turn
+        Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
+        PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
