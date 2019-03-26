@@ -12,9 +12,11 @@ public class Goodegg : MonoBehaviour
     public KeyCode moveKey;
     public static int mana;
     public static int totalMana;
+    public GameObject DieMsg;
     // Start is called before the first frame update
     void Start()
     {
+        DieMsg.SetActive(false);
         healthAmount = PlayerPrefs.GetFloat("Health", 100.0f);
         healthAmount = healthAmount / 100;
         Debug.Log("health in fight start" + healthAmount);
@@ -37,7 +39,7 @@ public class Goodegg : MonoBehaviour
     {
         if (healthAmount <= 0)
         {
-            Destroy(gameObject);
+            DieMsg.SetActive(true);
         }
 
         isTurn = turnClass.isTurn;
@@ -52,5 +54,18 @@ public class Goodegg : MonoBehaviour
                 turnClass.wasTurnPrev = true;
             }
         }
+    }
+
+    public void restartBtn()
+    {
+        Destroy(gameObject);
+    
+        SceneManager.LoadScene(0);
+    }
+
+    public void quitBtn()
+    {
+        Destroy(gameObject);
+        Application.Quit();
     }
 }
