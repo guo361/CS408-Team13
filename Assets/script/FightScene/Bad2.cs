@@ -58,48 +58,76 @@ public class Bad2 : MonoBehaviour
             StartCoroutine("WaitAndMove");
         }
     }
-
+    void deductByShield(float damage)
+    {
+        int real = Mathf.RoundToInt(damage * 100);
+        if (Goodegg.shield > 0)
+        {
+            real = real - Goodegg.shield;
+            if (real <= 0)
+            {
+                Debug.Log(Goodegg.shield);
+                Goodegg.shield = Goodegg.shield - Mathf.RoundToInt(100 * real);
+                Debug.Log(real);
+                Debug.Log(Goodegg.shield);
+                return;
+            }
+           
+        }
+        Goodegg.healthAmount = Goodegg.healthAmount - real / 100.00f;
+      
+        
+    }
     IEnumerator WaitAndMove()
     {
-        yield return new WaitForSeconds(1f);
+       
         //TODO: enemy turn
         int skill = Random.Range(0, 3);
         Debug.Log(skill);
+        float damage = 0f;
         switch (skill)
         {
             case 0:
-                Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
+
+                //Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
+                deductByShield(0.05f);//replace previous by counting shield
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 Debug.Log("count" + count);
                 if (count < 3)
                 {
                     Debug.Log("dot");
-                    Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+
+                    //Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                    deductByShield(0.03f);//replace previous by counting shield
                     PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                     count++;
                 }
                 break;
             case 1:
-                Goodegg.healthAmount = Goodegg.healthAmount - 0.02f;
+                // Goodegg.healthAmount = Goodegg.healthAmount - 0.02f;
+                deductByShield(0.02f);//replace previous by counting shield
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 Debug.Log("count" + count);
                 if (count < 3)
                 {
                     Debug.Log("dot");
-                    Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                   // Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                    deductByShield(0.03f);//replace previous by counting shield
                     PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                     count++;
                 }
                 break;
             case 2:
-                Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                //Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                deductByShield(0.03f);//replace previous by counting shield
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 count = 0;
                 Debug.Log("count" + count);
                 if (count < 3)
                 {
                     Debug.Log("dot");
-                    Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                    // Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                    deductByShield(0.03f);//replace previous by counting shield
                     PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                     count++;
                 }
@@ -108,7 +136,8 @@ public class Bad2 : MonoBehaviour
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
-
+        yield return new WaitForSeconds(1f);
+        Goodegg.shield = 0;
         StopCoroutine("WaitAndMove");
     }
 

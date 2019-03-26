@@ -29,6 +29,7 @@ public class Goodegg : MonoBehaviour
         totalMana = 3;
         mana = totalMana;
         shield = 0;
+        PlayerPrefs.SetInt("Shield", 0);
         turnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript09>();
 
         foreach (TurnClass09 tc in turnSystem.playersGroup)

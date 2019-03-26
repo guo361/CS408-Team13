@@ -482,12 +482,14 @@ public class CardEffects : MonoBehaviour {
                 else if (card.cardName == "Guard")
                 {
                     Goodegg.shield = Goodegg.shield + 7;
+                    PlayerPrefs.SetInt("Shield", Goodegg.shield);
                     Goodegg.mana = Goodegg.mana - 1;
                 }
                 else if (card.cardName == "Lifesteal")
                 {
                     enemylife = enemylife - 0.08f;
                     Goodegg.healthAmount = Goodegg.healthAmount + 0.07f;
+                    PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                     PlayerPrefs.SetFloat("enemyHP", enemylife);
                     if (Goodegg.healthAmount >= 0.99)
                     {
