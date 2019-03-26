@@ -10,12 +10,16 @@ public class BadEgg : MonoBehaviour
     public TurnClass09 turnClass;
     public bool isTurn = false;
     public GameObject dialog;
+    public Vector3 position;
+    public Quaternion rotation;
     //bool flag = false;
     // Start is called before the first frame update
     int cardnum;
     void Start()
     {
         //flag = false;
+        position = transform.position;
+        rotation = transform.rotation;
         healthAmount = PlayerPrefs.GetFloat("EHealth1");
         healthAmount = healthAmount / 100;
         PlayerPrefs.SetFloat("enemyHP", healthAmount);
@@ -38,6 +42,8 @@ public class BadEgg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.rotation = rotation;
+        transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
         if (healthAmount <= 0.01)
         {
@@ -57,7 +63,7 @@ public class BadEgg : MonoBehaviour
 
     IEnumerator WaitAndMove()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(10f);
         //TODO: enemy turn
         isTurn = false;
         turnClass.isTurn = isTurn;
