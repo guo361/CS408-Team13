@@ -6,8 +6,12 @@ public class CardLibrarySetShowing : MonoBehaviour
 {
     public Text strikeText;
     public Text guardText;
+    public Text lifestealText;
+    public Text swiftText;
     public int strikeNum;
     public int guardNum;
+    public int lifestealNum;
+    public int swiftNum;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +27,19 @@ public class CardLibrarySetShowing : MonoBehaviour
             {
                 guardNum++;
             }
-           
+            else if (temp.cardName == "Lifesteal")
+            {
+                lifestealNum++;
+            }
+            else if (temp.cardName == "Swift")
+            {
+                swiftNum++;
+            }
+
             strikeText.text = "X " + strikeNum;
             guardText.text = "X " + guardNum;
+            lifestealText.text = "X " + lifestealNum;
+            swiftText.text = "X " + swiftNum;
         }
     }
 
