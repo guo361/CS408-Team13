@@ -9,7 +9,8 @@ public class Bad3 : MonoBehaviour
     public turnSystemScript09 turnSystem;
     public TurnClass09 turnClass;
     public bool isTurn = false;
-
+    public GameObject dialog;
+    int cardnum;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class Bad3 : MonoBehaviour
         healthAmount = healthAmount / 100;
         PlayerPrefs.SetFloat("enemyHP", healthAmount);
         Debug.Log("enemy3" + healthAmount);
+        dialog.SetActive(false);
 
         turnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript09>();
 
@@ -36,8 +38,8 @@ public class Bad3 : MonoBehaviour
         if (healthAmount <= 0.01)
         {
             PlayerPrefs.SetInt("enemy3dead", 1);
-            Destroy(gameObject);
-            SceneManager.LoadScene(2);
+            dialog.SetActive(true);
+
         }
 
         isTurn = turnClass.isTurn;
@@ -56,5 +58,36 @@ public class Bad3 : MonoBehaviour
         turnClass.wasTurnPrev = true;
 
         StopCoroutine("WaitAndMove");
+    }
+
+    public void addNewCard()
+    {
+        //random generate card num
+        cardnum = Random.Range(0, 2);
+        Debug.Log("******************** " + cardnum);
+        //add new cards
+        Card newcard = new Card();
+        if (cardnum == 0)
+        {
+            newcard.cardName = "Strike";
+
+        }
+        else
+        {
+            newcard.cardName = "Guard";
+
+        }
+        CardLibrary.Instance.myCards.Add(newcard);
+        CardLibrary.Instance.cardNumber += 1;
+
+
+    }
+
+    public void okbtn()
+    {
+        addNewCard();
+        Destroy(gameObject);
+        SceneManager.LoadScene(2);
+
     }
 }

@@ -398,6 +398,10 @@ public class CardEffects : MonoBehaviour {
     // This function is called when the arrow touches the character and the mouse has been clicked
     void PlayCard()
     {
+        if (Goodegg.isTurn == false)
+        {
+            return;
+        }
         if (Goodegg.mana == 0)
             return;
         Debug.Log("suki9");
@@ -949,6 +953,7 @@ public class CardEffects : MonoBehaviour {
     int GetMouseOnCard()
     {
         Debug.Log("suki26");
+        
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         if (hit.collider != null && hit.collider.gameObject.name.StartsWith("Card:"))
         {
@@ -1024,6 +1029,7 @@ public class CardEffects : MonoBehaviour {
     // Prepare card state for rising up
     void CheckMouseRise()
     {
+
         Debug.Log("suki30");
         if (mouseClickCard == -1) return;
         var mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -1064,6 +1070,7 @@ public class CardEffects : MonoBehaviour {
     // The joint direction of the arrow can be calculated by the vector from this joint to last joint
     void UpdateArrows()
     {
+        
         Debug.Log("suki31");
         if (focusOnCard != -1)
         {
