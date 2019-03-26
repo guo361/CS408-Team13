@@ -10,12 +10,11 @@ public class BadEgg : MonoBehaviour
     public TurnClass09 turnClass;
     public bool isTurn = false;
     public GameObject dialog;
-    //bool flag = false;
-    // Start is called before the first frame update
     int cardnum;
+    // Start is called before the first frame update
+
     void Start()
     {
-        //flag = false;
         healthAmount = PlayerPrefs.GetFloat("EHealth1");
         healthAmount = healthAmount / 100;
         PlayerPrefs.SetFloat("enemyHP", healthAmount);
@@ -87,6 +86,7 @@ public class BadEgg : MonoBehaviour
 
 
     }
+    
     public void okbtn()
     {
         addNewCard();
