@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Bad2 : MonoBehaviour
 {
     public static float healthAmount;
+    public static int count;
 
     public turnSystemScript09 turnSystem;
     public TurnClass09 turnClass;
@@ -22,6 +23,8 @@ public class Bad2 : MonoBehaviour
         PlayerPrefs.SetFloat("enemyHP", healthAmount);
         Debug.Log("enemy2" + healthAmount);
         dialog.SetActive(false);
+
+        count = 0;
 
         turnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript09>();
 
@@ -56,6 +59,48 @@ public class Bad2 : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         //TODO: enemy turn
+        int skill = Random.Range(0, 3);
+        Debug.Log(skill);
+        switch (skill)
+        {
+            case 0:
+                Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
+                PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
+                Debug.Log("count" + count);
+                if (count < 3)
+                {
+                    Debug.Log("dot");
+                    Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                    PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
+                    count++;
+                }
+                break;
+            case 1:
+                Goodegg.healthAmount = Goodegg.healthAmount - 0.02f;
+                PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
+                Debug.Log("count" + count);
+                if (count < 3)
+                {
+                    Debug.Log("dot");
+                    Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                    PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
+                    count++;
+                }
+                break;
+            case 2:
+                Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
+                count = 0;
+                Debug.Log("count" + count);
+                if (count < 3)
+                {
+                    Debug.Log("dot");
+                    Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                    PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
+                    count++;
+                }
+                break;
+        }
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
