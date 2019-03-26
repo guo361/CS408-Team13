@@ -10,10 +10,13 @@ public class BossEgg : MonoBehaviour
     public turnSystemScript09 turnSystem;
     public TurnClass09 turnClass;
     public bool isTurn = false;
-
+    public Vector3 position;
+    public Quaternion rotation;
     // Start is called before the first frame update
     void Start()
     {
+        position = transform.position;
+        rotation = transform.rotation;
         healthAmount = PlayerPrefs.GetFloat("Boss");
         healthAmount = healthAmount / 100;
         PlayerPrefs.SetFloat("enemyHP", healthAmount);
@@ -35,6 +38,8 @@ public class BossEgg : MonoBehaviour
             // Update is called once per frame
     void Update()
     {
+        transform.rotation = rotation;
+        transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
         if (healthAmount <= 0.01)
         {

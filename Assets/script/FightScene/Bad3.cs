@@ -10,10 +10,14 @@ public class Bad3 : MonoBehaviour
     public TurnClass09 turnClass;
     public bool isTurn = false;
     public GameObject dialog;
+    public Vector3 position;
+    public Quaternion rotation;
     int cardnum;
     // Start is called before the first frame update
     void Start()
     {
+        position = transform.position;
+        rotation = transform.rotation;
         healthAmount = PlayerPrefs.GetFloat("EHealth3");
         healthAmount = healthAmount / 100;
         PlayerPrefs.SetFloat("enemyHP", healthAmount);
@@ -34,6 +38,8 @@ public class Bad3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.rotation = rotation;
+        transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
         if (healthAmount <= 0.01)
         {
