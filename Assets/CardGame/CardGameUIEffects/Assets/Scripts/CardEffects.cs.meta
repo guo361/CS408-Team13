@@ -3,7 +3,32 @@ guid: 95a789483d5dc7f4aae435adf176a723
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - handCardObj: {instanceID: 0}
+  - dropCardPile: {instanceID: 0}
+  - getCardPile: {instanceID: 0}
+  - drawBtn: {instanceID: 0}
+  - discardBtn: {instanceID: 0}
+  - drawPileText: {instanceID: 0}
+  - discardPileText: {instanceID: 0}
+  - toast: {instanceID: 0}
+  - arrowHeadGraySprite: {instanceID: 0}
+  - arrowBodyGraySprite: {instanceID: 0}
+  - arrowHeadGreenSprite: {instanceID: 0}
+  - arrowBodyGreenSprite: {instanceID: 0}
+  - arrowHeadRedSprite: {instanceID: 0}
+  - arrowBodyRedSprite: {instanceID: 0}
+  - arrowHeadPrefab: {instanceID: 0}
+  - arrowBodyPrefab: {instanceID: 0}
+  - cardPrefab: {instanceID: 0}
+  - strikecardPrefab: {instanceID: 0}
+  - guardcardPrefab: {instanceID: 0}
+  - lifestealcardPrefab: {instanceID: 0}
+  - swiftcardPrefab: {instanceID: 0}
+  - attackIconPrefab: {instanceID: 0}
+  - defenseIconPrefab: {instanceID: 0}
+  - enemy: {instanceID: 0}
+  - enemyHP: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

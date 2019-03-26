@@ -23,6 +23,7 @@ public class CardLibrarySetShowing : MonoBehaviour
             {
                 guardNum++;
             }
+           
             strikeText.text = "X " + strikeNum;
             guardText.text = "X " + guardNum;
         }
