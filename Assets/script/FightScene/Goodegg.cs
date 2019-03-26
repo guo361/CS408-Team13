@@ -47,7 +47,6 @@ public class Goodegg : MonoBehaviour
             if (Input.GetKeyDown(moveKey))
             {
                 //TODO: hero attact here
-
                 isTurn = false;
                 turnClass.isTurn = isTurn;
                 turnClass.wasTurnPrev = true;

@@ -15,6 +15,8 @@ public class BadEgg : MonoBehaviour
     //bool flag = false;
     // Start is called before the first frame update
     int cardnum;
+    // Start is called before the first frame update
+
     void Start()
     {
         //flag = false;
@@ -28,7 +30,7 @@ public class BadEgg : MonoBehaviour
 
         turnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript09>();
 
-        
+
 
         foreach (TurnClass09 tc in turnSystem.playersGroup)
         {
@@ -50,7 +52,7 @@ public class BadEgg : MonoBehaviour
             PlayerPrefs.SetInt("enemy1dead", 1);
             //display reward windows
             dialog.SetActive(true);
-           
+
         }
 
         isTurn = turnClass.isTurn;
@@ -93,6 +95,7 @@ public class BadEgg : MonoBehaviour
 
 
     }
+
     public void okbtn()
     {
         addNewCard();
