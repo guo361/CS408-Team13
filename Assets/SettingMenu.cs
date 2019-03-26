@@ -7,7 +7,6 @@ public class SettingMenu : MonoBehaviour
 {
     public void Newgame() {
         CardLibrary.Instance.cardNumber = 0;
-        CardLibrary.Instance.myCards = new List<Card>();
         PlayerPrefs.SetInt("infight", 0);
         PlayerPrefs.SetInt("haveCards", 0);
         PlayerPrefs.SetInt("enemy1dead", 0);

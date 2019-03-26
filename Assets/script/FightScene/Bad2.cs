@@ -171,7 +171,6 @@ public class Bad2 : MonoBehaviour
     public void okbtn()
     {
         addNewCard();
-        Destroy(gameObject);
         SceneManager.LoadScene(2);
 
     }
