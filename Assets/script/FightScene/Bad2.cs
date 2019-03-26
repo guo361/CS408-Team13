@@ -61,30 +61,34 @@ public class Bad2 : MonoBehaviour
     void deductByShield(float damage)
     {
         int real = Mathf.RoundToInt(damage * 100);
+        int temp = real;
         if (Goodegg.shield > 0)
         {
             real = real - Goodegg.shield;
             if (real <= 0)
             {
-                Debug.Log(Goodegg.shield);
-                Goodegg.shield = Goodegg.shield - Mathf.RoundToInt(100 * real);
-                Debug.Log(real);
-                Debug.Log(Goodegg.shield);
+
+                Goodegg.shield = Goodegg.shield - temp;
+
                 return;
             }
-           
+            else
+            {
+                Goodegg.shield = 0;
+            }
+
         }
-        Goodegg.healthAmount = Goodegg.healthAmount - real / 100.00f;
-      
-        
+
+        Goodegg.healthAmount = Goodegg.healthAmount - (real / 100.00f);
+
     }
     IEnumerator WaitAndMove()
     {
-       
+        yield return new WaitForSeconds(1f);
         //TODO: enemy turn
         int skill = Random.Range(0, 3);
         Debug.Log(skill);
-        float damage = 0f;
+       
         switch (skill)
         {
             case 0:
@@ -136,8 +140,8 @@ public class Bad2 : MonoBehaviour
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
-        yield return new WaitForSeconds(1f);
-        Goodegg.shield = 0;
+        
+        Goodegg.count = 1;
         StopCoroutine("WaitAndMove");
     }
 

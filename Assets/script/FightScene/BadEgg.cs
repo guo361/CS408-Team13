@@ -63,18 +63,43 @@ public class BadEgg : MonoBehaviour
             
         }
     }
+    void deductByShield(float damage)
+    {
+        int real = Mathf.RoundToInt(damage * 100);
+        int temp = real;
+        if (Goodegg.shield > 0)
+        {
+            real = real - Goodegg.shield;
+            if (real <= 0)
+            {
+                
+                Goodegg.shield = Goodegg.shield - temp;
+                
+                return;
+            }
+            else
+            {
+                Goodegg.shield = 0;
+            }
 
+        }
+       
+        Goodegg.healthAmount = Goodegg.healthAmount - (real / 100.00f);
+        
+    }
 
     IEnumerator WaitAndMove()
     {
         yield return new WaitForSeconds(1f);
         //TODO: enemy turn
-        Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
+        // Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
+        deductByShield(0.05f);
         PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
-        Goodegg.shield = 0;
+
+        Goodegg.count = 1;
         StopCoroutine("WaitAndMove");
         
     }

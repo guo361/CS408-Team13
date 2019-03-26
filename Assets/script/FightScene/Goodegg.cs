@@ -15,6 +15,7 @@ public class Goodegg : MonoBehaviour
     public static int mana;
     public static int totalMana;
     public GameObject DieMsg;
+    public static int count = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,19 +53,31 @@ public class Goodegg : MonoBehaviour
 
         isTurn = turnClass.isTurn;
 
-    /*    if (isTurn)
+       if (isTurn && count == 1)
         {
 
-           if (Input.GetKeyDown(moveKey))
-           {
-                //TODO: hero attact here
-               isTurn = false;
-               turnClass.isTurn = isTurn;
-               turnClass.wasTurnPrev = true;
-           }
-        }*/
+            /* if (Input.GetKeyDown(moveKey))
+             {
+                  //TODO: hero attact here
+                 isTurn = false;
+                 turnClass.isTurn = isTurn;
+                 turnClass.wasTurnPrev = true;
+             }*/
+            StartCoroutine("WaitAndMove");
+            
+        }
     }
+    IEnumerator WaitAndMove()
+    {
+        yield return new WaitForSeconds(0.3f);
+        //TODO: enemy turn
+        // Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
 
+        shield = 0;
+        count--;
+        StopCoroutine("WaitAndMove");
+
+    }
     public void restartBtn()
     {
         Destroy(gameObject);

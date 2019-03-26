@@ -56,7 +56,30 @@ public class Bad3 : MonoBehaviour
             StartCoroutine("WaitAndMove");
         }
     }
+    void deductByShield(float damage)
+    {
+        int real = Mathf.RoundToInt(damage * 100);
+        int temp = real;
+        if (Goodegg.shield > 0)
+        {
+            real = real - Goodegg.shield;
+            if (real <= 0)
+            {
 
+                Goodegg.shield = Goodegg.shield - temp;
+
+                return;
+            }
+            else
+            {
+                Goodegg.shield = 0;
+            }
+
+        }
+
+        Goodegg.healthAmount = Goodegg.healthAmount - (real / 100.00f);
+
+    }
     IEnumerator WaitAndMove()
     {
         yield return new WaitForSeconds(1f);
@@ -66,7 +89,8 @@ public class Bad3 : MonoBehaviour
         switch (skill)
         {
             case 0:
-                Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
+                //Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
+                deductByShield(0.05f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 Debug.Log("count" + count);
                 if (count < 3 && healthAmount < 0.95f)
@@ -78,7 +102,8 @@ public class Bad3 : MonoBehaviour
                 }
                 break;
             case 1:
-                Goodegg.healthAmount = Goodegg.healthAmount - 0.02f;
+                //Goodegg.healthAmount = Goodegg.healthAmount - 0.02f;
+                deductByShield(0.02f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 Debug.Log("count" + count);
                 if (count < 3 && healthAmount < 0.95f)
@@ -90,7 +115,8 @@ public class Bad3 : MonoBehaviour
                 }
                 break;
             case 2:
-                Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                //Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
+                deductByShield(0.03f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 count = 0;
                 Debug.Log("count" + count);
@@ -106,7 +132,7 @@ public class Bad3 : MonoBehaviour
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
-
+        Goodegg.count = 1;
         StopCoroutine("WaitAndMove");
     }
 

@@ -57,7 +57,30 @@ public class BossEgg : MonoBehaviour
 
     }
 
+    void deductByShield(float damage)
+    {
+        int real = Mathf.RoundToInt(damage * 100);
+        int temp = real;
+        if (Goodegg.shield > 0)
+        {
+            real = real - Goodegg.shield;
+            if (real <= 0)
+            {
+                
+                Goodegg.shield = Goodegg.shield - temp;
+                
+                return;
+            }
+            else
+            {
+                Goodegg.shield = 0;
+            }
 
+        }
+        
+        Goodegg.healthAmount = Goodegg.healthAmount - (real / 100.00f);
+        
+    }
     IEnumerator WaitAndMove()
     {
         //yield return new WaitForSeconds(1f);
@@ -76,17 +99,20 @@ public class BossEgg : MonoBehaviour
         {
             case 0:
                 Goodegg.totalMana = 3;
-                Goodegg.healthAmount = Goodegg.healthAmount - 0.1f;
+                // Goodegg.healthAmount = Goodegg.healthAmount - 0.1f;
+                deductByShield(0.1f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 break;
             case 1:
                 Goodegg.totalMana = 3;
-                Goodegg.healthAmount = Goodegg.healthAmount - 0.13f;
+                //Goodegg.healthAmount = Goodegg.healthAmount - 0.13f;
+                deductByShield(0.13f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 break;
             case 2:
                 Goodegg.totalMana = 3;
-                Goodegg.healthAmount = Goodegg.healthAmount - 0.1f;
+                // Goodegg.healthAmount = Goodegg.healthAmount - 0.1f;
+                deductByShield(0.1f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 if (healthAmount < 0.95f)
                 {
@@ -101,7 +127,8 @@ public class BossEgg : MonoBehaviour
                 break;
             case 3:
                 Goodegg.totalMana = 3;
-                Goodegg.healthAmount = Goodegg.healthAmount - 0.07f;
+                //Goodegg.healthAmount = Goodegg.healthAmount - 0.07f;
+                deductByShield(0.07f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 break;
         }
@@ -113,7 +140,8 @@ public class BossEgg : MonoBehaviour
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
         //transform.position += transform.right * 7;
-
+       
+        Goodegg.count = 1;
         StopCoroutine("WaitAndMove");
     }
 }
