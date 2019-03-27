@@ -24,7 +24,7 @@ public class Bad3 : MonoBehaviour
         PlayerPrefs.SetFloat("enemyHP", healthAmount);
         Debug.Log("enemy3" + healthAmount);
         dialog.SetActive(false);
-
+        count = 3;
         turnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript09>();
 
         foreach (TurnClass09 tc in turnSystem.playersGroup)

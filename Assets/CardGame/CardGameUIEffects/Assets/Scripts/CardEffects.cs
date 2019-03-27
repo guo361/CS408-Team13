@@ -175,6 +175,7 @@ public class CardEffects : MonoBehaviour {
         enemyHP = enemy.GetComponent<Text>();
         Debug.Log(enemyHP.text);
         Debug.Log(cardTotalNum);*/
+        PlayerPrefs.SetInt("lackCard", 0);
         cardTotalNum = CardLibrary.Instance.cardNumber;
         totalCards = deepCopy(CardLibrary.Instance.myCards);
         enemylife = PlayerPrefs.GetFloat("enemyHP");
@@ -189,6 +190,28 @@ public class CardEffects : MonoBehaviour {
         discardBtn.GetComponent<Button>().onClick.AddListener(delegate ()
         {
             ClearHandCard();
+            if(drawPileCards.Count >= handNumAuto)
+            {
+                for(int i=0; i< handNumAuto; i++)
+                {
+                    Invoke("AddHandCard", 2 + i/ 10.0f);
+                }
+            }
+            else if(drawPileCards.Count > 0)
+            {
+                PlayerPrefs.SetInt("lackCard", 1);
+                int tempcount = drawPileCards.Count;
+                for(int i =0; i< tempcount; i++)
+                {
+                    Invoke("AddHandCard", 2);
+                }
+                Invoke("ShuffleCardAnimation", 3);
+                for(int i = 0; i < handNumAuto - tempcount; i++)
+                {
+                    Invoke("AddHandCard", 4);
+                }
+
+            }
             Goodegg.isTurn = false;
             Goodegg.turnClass.isTurn = Goodegg.isTurn;
             Goodegg.turnClass.wasTurnPrev = true;
@@ -212,8 +235,8 @@ public class CardEffects : MonoBehaviour {
 
     void Update()
     {
-        
-        
+
+        Debug.Log("suki1");
         // Shuffle animation has the highest priority to display
         if (shufflingCard == false)
         {
@@ -231,7 +254,7 @@ public class CardEffects : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        
+        Debug.Log("suki2");
         if (shufflingCard == false)
         {
             CardRotate();
@@ -250,7 +273,7 @@ public class CardEffects : MonoBehaviour {
 
     void InitDrawPileCards()
     {
-  
+        Debug.Log("suki3");
         for (int i = 0; i < cardTotalNum; ++i)
         {
             AddDrawPileCard();
@@ -261,14 +284,14 @@ public class CardEffects : MonoBehaviour {
 
     void AddDiscardPileCard(Card card)
     {
-
+        Debug.Log("suki4");
         discardPileCards.Enqueue(card);
         discardPileText.text = DISCARD_PILE_NUM_TEXT + discardPileCards.Count.ToString();
     }
 
     void AddDrawPileCard(Dictionary<string, int> cardInfo = null)
     {
-
+        Debug.Log("suki5");
         /*
         Card card = new Card();
         card.info = cardInfo;
@@ -315,7 +338,7 @@ public class CardEffects : MonoBehaviour {
 
     Card GetCardFromDrawPile()
     {
- 
+        Debug.Log("suki6");
         var card = drawPileCards.Dequeue();
         card.instance.SetActive(true);
         drawPileText.text = DRAW_PILE_NUM_TEXT + drawPileCards.Count.ToString();
@@ -325,7 +348,7 @@ public class CardEffects : MonoBehaviour {
     // Prepare states to play shuffle effect
     void ShuffleCardAnimation()
     {
- 
+        Debug.Log("suki7");
         for (int i = 0; i < shuffle_card_curve.Count; ++i)
         {
             // Prepare card state to shuffle
@@ -350,32 +373,59 @@ public class CardEffects : MonoBehaviour {
 
     void ShufflePileCard()
     {
-
+        Debug.Log("suki8");
         // All cards will be sent from discard pile to draw pile
+        int tempdiscardcount = discardPileCards.Count;
+        totalCards = new List<Card>();
+        int i = 0;
         while (discardPileCards.Count > 0)
         {
-            var card = discardPileCards.Dequeue();
-            AddDrawPileCard(card.info);
+            Card card = discardPileCards.Dequeue();
+            card.scaleSpeed = 1.0f;
+            card.targetAngle = 0.0f;
+            card.targetPosition = Vector3.zero;
+            card.sortOrder = 0;
+            card.offsetAngle = 0.0f;
+            card.targetScale = 0.7f;
+            card.moveSpeed = 1.0f;
+            card.lastOnTime = 0.0f;
+            card.curAngle = 0.0f;
+            card.nonInteractBegin = 0.0f;
+            card.totalDistance = 0.0f;
+            card.originHighY = 0.0f;
+            card.isPlaying = false;
+            card.isDropping = false;
+            totalCards.Insert(i, card);
+            i++;
         }
+        for(i = 0; i<tempdiscardcount; i++)
+        {
+            AddDrawPileCard();
+        }
+        
         drawPileText.text = DRAW_PILE_NUM_TEXT + drawPileCards.Count.ToString();
         discardPileText.text = DISCARD_PILE_NUM_TEXT + discardPileCards.Count.ToString();
     }
 
     IEnumerator SendHandCards()
     {
-    
+        Debug.Log("suki9");
         ShufflePileCard();
-        for (int i = 0; i < handNumAuto; ++i)
+        if(PlayerPrefs.GetInt("lackCard") == 0)
         {
-            yield return new WaitForSeconds(0.2f);
-            AddHandCard();
+            for (int i = 0; i < handNumAuto; ++i)
+            {
+                yield return new WaitForSeconds(0.2f);
+                AddHandCard();
+            }
         }
+        PlayerPrefs.SetInt("lackCard", 0);
     }
 
     // This function is called to check if the mouse is on the character 
     private void GetMouseOnPlayer()
     {
-    
+        Debug.Log("suki10");
         focusOnPlayer = null;
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         if (hit.collider != null && focusOnCard != -1)
@@ -412,6 +462,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called when the arrow touches the character and the mouse has been clicked
     void PlayCard()
     {
+        Debug.Log("suki11");
         if (Goodegg.isTurn == false)
         {
             return;
@@ -448,8 +499,8 @@ public class CardEffects : MonoBehaviour {
     // In card playing effect's first stage, the card rising up to the center of the screen
     void CardPlaying()
     {
-       
 
+        Debug.Log("suki12");
         for (int i = 0; i < playingCard.Count; ++i)
         {
             if (playingCard[i] == null || playingCard[i].isPlaying == true || playingCard[i].isDropping == true) continue;
@@ -515,8 +566,8 @@ public class CardEffects : MonoBehaviour {
     // Card shuffling effect
     void CardShuffling()
     {
-   
 
+        Debug.Log("suki13");
         for (int i = 0; i < shuffleCardsEffects.Count; ++i)
         {
             // Calculate card position on motion path by shuffle card curves
@@ -557,8 +608,8 @@ public class CardEffects : MonoBehaviour {
     // In card playing effect's second stage, the card dropping to the discard pile
     void PlayCardEffect()
     {
-   
 
+        Debug.Log("suki14");
         var clear_flag = true;
         for (int i = 0; i < playingCard.Count; ++i)
         {
@@ -614,8 +665,8 @@ public class CardEffects : MonoBehaviour {
     // This function is called to rotate cards to their goal directions calculated by combined states
     void CardRotate()
     {
- 
 
+        Debug.Log("suki15");
         for (int i = 0; i < handCards.Count; ++i)
         {
             Card card = handCards[i];
@@ -641,8 +692,8 @@ public class CardEffects : MonoBehaviour {
     // This function is called to move cards to their goal positions calculated by combined states
     void CardMove()
     {
- 
 
+        Debug.Log("suki16");
         for (int i = 0; i < handCards.Count; i++)
         {
             Card card = handCards[i];
@@ -663,8 +714,8 @@ public class CardEffects : MonoBehaviour {
     // This function is called to scale cards to their goal size calculated by combined states
     void CardScale()
     {
-   
 
+        Debug.Log("suki17");
         for (int i = 0; i < handCards.Count; i++)
         {
             Card card = handCards[i];
@@ -728,8 +779,8 @@ public class CardEffects : MonoBehaviour {
     // This function is called to check if the mouse has clicked on a card
     void CheckMouseClickCard()
     {
-       
 
+        Debug.Log("suki18");
         if (Input.GetMouseButtonDown(0) && mouseClickCard == -1)
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -767,8 +818,8 @@ public class CardEffects : MonoBehaviour {
     // Update the card directions by different card numbers
     void UpdateCardAngle()
     {
-      
 
+        Debug.Log("suki19");
         for (int i = 0; i < cardNumForAngles.Count; ++i)
         {
             if (handCards.Count <= cardNumForAngles[i] && (i == 0 || handCards.Count > cardNumForAngles[i - 1]))
@@ -781,7 +832,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called for preparing to add a card in hand (draw)
     void AddHandCard()
     {
- 
+        Debug.Log("suki20");
         if (shufflingCard == true) return;
         if (drawPileCards.Count == 0)
         {
@@ -819,7 +870,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called for discarding all cards in hand
     void ClearHandCard()
     {
- 
+        Debug.Log("suki21");
         if (shufflingCard == true) return;
         if (Time.time - lastAddHandCardTime <= 0.5f) return;
         for (int i = 0; i < handCards.Count; i++)
@@ -854,7 +905,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called for preparing to drop card after playing effect
     void DropHandCard(int idx)
     {
-
+        Debug.Log("suki22");
         if (lastFrameMouseOn != -1)
         {
             MouseOffCard(lastFrameMouseOn);
@@ -873,7 +924,7 @@ public class CardEffects : MonoBehaviour {
     // The card's name should be modifed by the number of cards in hand
     void ReArrangeCard()
     {
-  
+        Debug.Log("suki23");
         for (int i = 0; i < handCards.Count; ++i)
         {
             handCards[i].instance.name = "Card:" + i.ToString();
@@ -884,7 +935,7 @@ public class CardEffects : MonoBehaviour {
     // Calculate the card transform by combined states
     void CalCardsTransform(bool force_update = false)
     {
-      
+        Debug.Log("suki24");
         int idx = GetMouseOnCard();
 
         if(idx >= -1 || force_update == true)
@@ -964,7 +1015,7 @@ public class CardEffects : MonoBehaviour {
     // end_angle: right push angle
     void OffsetSideCards(int idx, float front_angle, float end_angle)
     {
-   
+        Debug.Log("suki25");
         int front = idx-1;
         int end = idx+1;
         Card card = handCards[idx];
@@ -991,8 +1042,8 @@ public class CardEffects : MonoBehaviour {
     // idx == -2 the mouse is not on a card in this frame and last frame
     int GetMouseOnCard()
     {
-   
-        
+
+        Debug.Log("suki26");
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         if (hit.collider != null && hit.collider.gameObject.name.StartsWith("Card:"))
         {
@@ -1031,7 +1082,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called to change the card state which the mouse is on
     void MouseOnCard(int idx)
     {
-
+        Debug.Log("suki27");
         Card card = handCards[idx];
         GameObject cardgo = card.instance;
         card.sortOrder = cardgo.GetComponent<SpriteRenderer>().sortingOrder;
@@ -1044,7 +1095,7 @@ public class CardEffects : MonoBehaviour {
     // This function is called to change the card state which loses the mouse focus
     void MouseOffCard(int idx)
     {
-   
+        Debug.Log("suki28");
         if (idx == -1) return;
         Card card = handCards[idx];
         GameObject cardgo = card.instance;
@@ -1057,7 +1108,7 @@ public class CardEffects : MonoBehaviour {
     // When click a card, the card follows the mouse on the bottom of the screen, when the mouse moves up, the card moves to the center top of the hand
     void FollowMouse()
     {
-
+        Debug.Log("suki29");
         if (mouseClickCard != -1 && focusOnCard == -1)
         {
             var mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -1069,7 +1120,8 @@ public class CardEffects : MonoBehaviour {
     void CheckMouseRise()
     {
 
- 
+        Debug.Log("suki30");
+
         if (mouseClickCard == -1) return;
         var mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (mouse_pos.y >= -3.0f + cardHalfSize / 2)
@@ -1113,8 +1165,8 @@ public class CardEffects : MonoBehaviour {
     // The joint direction of the arrow can be calculated by the vector from this joint to last joint
     void UpdateArrows()
     {
-        
 
+        Debug.Log("suki31");
         if (focusOnCard != -1)
         {
             var mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
