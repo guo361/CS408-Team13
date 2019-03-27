@@ -382,7 +382,9 @@ public class PlayerController : MonoBehaviour
                 _moveDirection = transform.forward * move.magnitude;
 
                 _moveDirection *= Speed;
-
+                _animator.SetBool("is_in_air", false);
+                _animator.SetBool("run", move.magnitude > 0);
+/*
                 if (Input.GetButton("Jump"))
                 {
                     _animator.SetBool("is_in_air", true);
@@ -393,7 +395,7 @@ public class PlayerController : MonoBehaviour
                 {
                     _animator.SetBool("is_in_air", false);
                     _animator.SetBool("run", move.magnitude > 0);
-                }
+                }*/
             }
 
             _moveDirection.y -= Gravity * Time.deltaTime;
