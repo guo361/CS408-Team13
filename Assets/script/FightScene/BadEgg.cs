@@ -47,7 +47,7 @@ public class BadEgg : MonoBehaviour
         transform.rotation = rotation;
         transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
-        if (healthAmount <= -10)
+        if (healthAmount <= -1.0)
         {
             PlayerPrefs.SetInt("enemy1dead", 1);
             //display reward windows

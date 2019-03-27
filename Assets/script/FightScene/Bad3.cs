@@ -91,7 +91,7 @@ public class Bad3 : MonoBehaviour
         {
             case 0:
                 //Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
-                deductByShield(0.05f);
+                deductByShield(0.07f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 Debug.Log("count" + count);
                 if (count < 3 && healthAmount < 0.95f)

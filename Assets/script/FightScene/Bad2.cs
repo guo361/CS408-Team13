@@ -86,7 +86,7 @@ public class Bad2 : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         //TODO: enemy turn
-        int skill = Random.Range(0, 3);
+        int skill = Random.Range(0, 2);
         Debug.Log(skill);
        
         switch (skill)

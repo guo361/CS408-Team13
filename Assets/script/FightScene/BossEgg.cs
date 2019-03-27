@@ -41,7 +41,7 @@ public class BossEgg : MonoBehaviour
         transform.rotation = rotation;
         transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
-        if (healthAmount <= -20)
+        if (healthAmount <= 0.01)
         {
             PlayerPrefs.SetInt("bossdead", 1);
             Destroy(gameObject);

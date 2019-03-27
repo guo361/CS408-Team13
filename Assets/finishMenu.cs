@@ -16,7 +16,7 @@ public class finishMenu : MonoBehaviour
     public void exit()
     {
         Debug.Log("here");
-        //Application.Quit();
+        Application.Quit();
 
 
     }

@@ -46,7 +46,7 @@ public class Goodegg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (healthAmount <= -20)
+        if (healthAmount <= 0.01)
         {
             DieMsg.SetActive(true);
         }
