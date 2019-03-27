@@ -114,16 +114,16 @@ public class BossEgg : MonoBehaviour
                 // Goodegg.healthAmount = Goodegg.healthAmount - 0.1f;
                 deductByShield(0.20f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
-                if (healthAmount < 0.95f)
-                {
+               // if (healthAmount < 0.95f)
+               // {
                     healthAmount = healthAmount + 0.10f;
                     PlayerPrefs.SetFloat("enemyHP", healthAmount);
-                }
-                else
-                {
+                //}
+               // else
+               // {
                     Goodegg.totalMana = Goodegg.totalMana - 1;
                     Goodegg.mana = Goodegg.totalMana;
-                }
+               // }
                 break;
             case 3:
                 Goodegg.totalMana = 3;

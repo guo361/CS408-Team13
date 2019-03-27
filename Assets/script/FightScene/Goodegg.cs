@@ -82,7 +82,7 @@ public class Goodegg : MonoBehaviour
     {
         Destroy(gameObject);
 
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
     }
 
     public void quitBtn()

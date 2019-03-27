@@ -27,13 +27,13 @@ public class CardLibrarySetShowing : MonoBehaviour
             {
                 guardNum++;
             }
-            else if (temp.cardName == "Lifesteal")
+            /*else if (temp.cardName == "Lifesteal")
             {
                 lifestealNum++;
-            }
+            }*/
             else if (temp.cardName == "Swift")
             {
-                swiftNum++;
+                swiftNum = 2;
             }
 
             strikeText.text = "X " + strikeNum;
