@@ -8,7 +8,7 @@ public class DamageSource : MonoBehaviour {
     public void OnTriggerEnter(Collider other) {
         PlayerController player = other.gameObject.GetComponent<PlayerController>();
 
-        player.TakeDamage(10);
+      //  player.TakeDamage(10);
 
 
     }

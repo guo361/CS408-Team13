@@ -442,8 +442,8 @@ public class PlayerController : MonoBehaviour
         }else if (other.gameObject.CompareTag("stoneEnemy1") && PlayerPrefs.GetInt("infight") != 1)
         {
             PlayerPrefs.SetInt("infight", 1);
-            PlayerPosition.Instance.position = transform.position;
-            PlayerPosition.Instance.rotation = transform.rotation;
+           // PlayerPosition.Instance.position = transform.position;
+            //PlayerPosition.Instance.rotation = transform.rotation;
             SceneManager.LoadScene(fight2);
 
         }

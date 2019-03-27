@@ -17,17 +17,17 @@ public class CreateCharacterButton : MonoBehaviour
     }
     public void Button_Onclick()
     {
-        if (playername.text.Length > 0 && playername.text.Length < 9)
-        {
+        //if (playername.text.Length > 0 && playername.text.Length < 9)
+       // {
             PlayerPrefs.SetString("Username", playername.text);
             Debug.Log("push");
             //SceneManager.LoadScene("demo");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        else
+        //}
+        /*else
         {
             message.SetActive(true);
-        }
+        }*/
     }
 
     /* public void Awake()

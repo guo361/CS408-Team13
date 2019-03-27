@@ -18,7 +18,7 @@ public class HUD : MonoBehaviour {
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            Application.Quit();
+           // Application.Quit();
         }
     }
 
