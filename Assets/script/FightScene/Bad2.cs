@@ -13,7 +13,6 @@ public class Bad2 : MonoBehaviour
     public TurnClass09 turnClass;
     public bool isTurn = false;
     public GameObject dialog;
-    int cardnum;
     public Vector3 position;
     public Quaternion rotation;
 
@@ -148,8 +147,7 @@ public class Bad2 : MonoBehaviour
     public void addNewCard()
     {
         //random generate card num
-        cardnum = Random.Range(0, 2);
-        Debug.Log("******************** " + cardnum);
+        int cardnum = Random.Range(0, 4);
         //add new cards
         Card newcard = new Card();
         if (cardnum == 0)
@@ -157,10 +155,18 @@ public class Bad2 : MonoBehaviour
             newcard.cardName = "Strike";
 
         }
-        else
+        else if(cardnum == 1)
         {
             newcard.cardName = "Guard";
 
+        }
+        else if (cardnum == 2)
+        {
+            newcard.cardName = "Lifesteal";
+        }
+        else
+        {
+            newcard.cardName = "Swift";
         }
         CardLibrary.Instance.myCards.Add(newcard);
         CardLibrary.Instance.cardNumber += 1;

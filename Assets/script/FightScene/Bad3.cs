@@ -14,7 +14,6 @@ public class Bad3 : MonoBehaviour
     public GameObject dialog;
     public Vector3 position;
     public Quaternion rotation;
-    int cardnum;
     // Start is called before the first frame update
     void Start()
     {
@@ -139,8 +138,7 @@ public class Bad3 : MonoBehaviour
     public void addNewCard()
     {
         //random generate card num
-        cardnum = Random.Range(0, 2);
-        Debug.Log("******************** " + cardnum);
+        int cardnum = Random.Range(0, 4);
         //add new cards
         Card newcard = new Card();
         if (cardnum == 0)
@@ -148,10 +146,18 @@ public class Bad3 : MonoBehaviour
             newcard.cardName = "Strike";
 
         }
-        else
+        else if (cardnum == 1)
         {
             newcard.cardName = "Guard";
 
+        }
+        else if (cardnum == 2)
+        {
+            newcard.cardName = "Lifesteal";
+        }
+        else
+        {
+            newcard.cardName = "Swift";
         }
         CardLibrary.Instance.myCards.Add(newcard);
         CardLibrary.Instance.cardNumber += 1;
