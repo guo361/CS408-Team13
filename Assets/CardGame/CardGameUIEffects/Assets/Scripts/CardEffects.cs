@@ -487,10 +487,10 @@ public class CardEffects : MonoBehaviour {
                 return;
             }
             //Lifesteal is 2 mana but the remaining is 1
-            if ((handCards[focusOnCard].cardName == "Lifesteal") && Goodegg.mana == 1)
+            /*if ((handCards[focusOnCard].cardName == "Lifesteal") && Goodegg.mana == 1)
             {
                 return;
-            }
+            }*/
             playingCard.Add(handCards[focusOnCard]);
             // Drop the card from hand
             DropHandCard(focusOnCard);
@@ -585,7 +585,7 @@ public class CardEffects : MonoBehaviour {
                         }
 
                     }
-                    Goodegg.mana = Goodegg.mana - 1;
+                    Goodegg.mana = Goodegg.mana - 2;
                 }
                 // Display skill effect
                 if (card.targetPlayer != null)
