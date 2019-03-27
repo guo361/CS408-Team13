@@ -203,12 +203,12 @@ public class CardEffects : MonoBehaviour {
                 int tempcount = drawPileCards.Count;
                 for(int i =0; i< tempcount; i++)
                 {
-                    Invoke("AddHandCard", 2);
+                    Invoke("AddHandCard", 2 + i / 10.0f);
                 }
                 Invoke("ShuffleCardAnimation", 3);
                 for(int i = 0; i < handNumAuto - tempcount; i++)
                 {
-                    Invoke("AddHandCard", 4);
+                    Invoke("AddHandCard", 4 + i / 10.0f);
                 }
 
             }
@@ -558,6 +558,34 @@ public class CardEffects : MonoBehaviour {
                         Goodegg.healthAmount = 1.0f;
                     }
                     Goodegg.mana = Goodegg.mana - 2;
+                }
+                else if(card.cardName == "Swift")
+                {
+                    if(drawPileCards.Count >= 2)
+                    {
+                        for (int ztemp = 0; ztemp < 2; ztemp++)
+                        {
+                            Invoke("AddHandCard", 2 + ztemp / 10.0f);
+                        }
+                    }
+                    else if(drawPileCards.Count == 1)
+                    {
+                        PlayerPrefs.SetInt("lackCard", 1);
+                        Invoke("AddHandCard", 2);
+                        Invoke("ShuffleCardAnimation", 3);
+                        Invoke("AddHandCard", 4);
+                    }
+                    else
+                    {
+                        PlayerPrefs.SetInt("lackCard", 1);
+                        Invoke("ShuffleCardAnimation", 2);
+                        for (int ztemp = 0; ztemp < 2; ztemp++)
+                        {
+                            Invoke("AddHandCard", 3 + ztemp / 10.0f);
+                        }
+
+                    }
+                    Goodegg.mana = Goodegg.mana - 1;
                 }
                 // Display skill effect
                 if (card.targetPlayer != null)
