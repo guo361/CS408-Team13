@@ -42,7 +42,7 @@ public class Bad3 : MonoBehaviour
         transform.rotation = rotation;
         transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
-        if (healthAmount <= 0.001)
+        if (healthAmount <= 0)
         {
             PlayerPrefs.SetInt("enemy3dead", 1);
             dialog.SetActive(true);
@@ -131,7 +131,7 @@ public class Bad3 : MonoBehaviour
         isTurn = false;
         turnClass.isTurn = isTurn;
         turnClass.wasTurnPrev = true;
-        Goodegg.count = 1;
+      //  Goodegg.count = 1;
         StopCoroutine("WaitAndMove");
     }
 

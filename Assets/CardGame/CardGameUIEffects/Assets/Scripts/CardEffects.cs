@@ -286,7 +286,8 @@ public class CardEffects : MonoBehaviour {
     {
         Debug.Log("suki4");
         discardPileCards.Enqueue(card);
-        discardPileText.text = DISCARD_PILE_NUM_TEXT + discardPileCards.Count.ToString();
+        // discardPileText.text = DISCARD_PILE_NUM_TEXT + discardPileCards.Count.ToString();
+        discardPileText.text = DISCARD_PILE_NUM_TEXT + "0";
     }
 
     void AddDrawPileCard(Dictionary<string, int> cardInfo = null)
@@ -341,7 +342,8 @@ public class CardEffects : MonoBehaviour {
         Debug.Log("suki6");
         var card = drawPileCards.Dequeue();
         card.instance.SetActive(true);
-        drawPileText.text = DRAW_PILE_NUM_TEXT + drawPileCards.Count.ToString();
+        // drawPileText.text = DRAW_PILE_NUM_TEXT + drawPileCards.Count.ToString();
+        drawPileText.text = DRAW_PILE_NUM_TEXT + "10";
         return card;
     }
 
@@ -482,14 +484,15 @@ public class CardEffects : MonoBehaviour {
                 return;
             }
             //Lifesteal and Strike cannot point to player
-            if ((handCards[focusOnCard].cardName == "Lifesteal" || handCards[focusOnCard].cardName == "Strike") && handCards[focusOnCard].targetPlayer.name != ENEMY_CHARA_NAME)
+            // if ((handCards[focusOnCard].cardName == "Lifesteal" || handCards[focusOnCard].cardName == "Strike") && handCards[focusOnCard].targetPlayer.name != ENEMY_CHARA_NAME)
+            if ((handCards[focusOnCard].cardName == "Lifesteal" ) && handCards[focusOnCard].targetPlayer.name != ENEMY_CHARA_NAME)
             {
                 return;
             }
             //Lifesteal is 2 mana but the remaining is 1
             if ((handCards[focusOnCard].cardName == "Lifesteal") && Goodegg.mana == 1)
             {
-                return;
+               // return;
             }
             playingCard.Add(handCards[focusOnCard]);
             // Drop the card from hand
@@ -585,7 +588,7 @@ public class CardEffects : MonoBehaviour {
                         }
 
                     }
-                    Goodegg.mana = Goodegg.mana - 1;
+                    Goodegg.mana = Goodegg.mana - 2;
                 }
                 // Display skill effect
                 if (card.targetPlayer != null)

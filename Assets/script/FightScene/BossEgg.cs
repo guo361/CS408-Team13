@@ -45,7 +45,7 @@ public class BossEgg : MonoBehaviour
         {
             PlayerPrefs.SetInt("bossdead", 1);
             Destroy(gameObject);
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
         }
 
         isTurn = turnClass.isTurn;

@@ -49,8 +49,9 @@ public class Bad2 : MonoBehaviour
         if (healthAmount <= 0.001)
         {
             PlayerPrefs.SetInt("enemy2dead", 1);
-            dialog.SetActive(true);
-
+            Destroy(gameObject);
+            //dialog.SetActive(true);
+            SceneManager.LoadScene(2);
         }
 
         isTurn = turnClass.isTurn;
