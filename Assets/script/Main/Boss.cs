@@ -22,7 +22,6 @@ public class Boss : MonoBehaviour
         {
             PlayerPrefs.SetInt("infight", 0);
             Destroy(gameObject);
-            SceneManager.LoadScene(7);
         }
     }
 }

@@ -286,7 +286,7 @@ public class CardEffects : MonoBehaviour {
     {
         Debug.Log("suki4");
         discardPileCards.Enqueue(card);
-        discardPileText.text = DISCARD_PILE_NUM_TEXT + discardPileCards.Count.ToString();
+        discardPileText.text = DISCARD_PILE_NUM_TEXT + "0";
     }
 
     void AddDrawPileCard(Dictionary<string, int> cardInfo = null)
@@ -341,7 +341,7 @@ public class CardEffects : MonoBehaviour {
         Debug.Log("suki6");
         var card = drawPileCards.Dequeue();
         card.instance.SetActive(true);
-        drawPileText.text = DRAW_PILE_NUM_TEXT + drawPileCards.Count.ToString();
+        drawPileText.text = DRAW_PILE_NUM_TEXT + "10";
         return card;
     }
 
