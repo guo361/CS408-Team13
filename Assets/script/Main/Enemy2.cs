@@ -21,7 +21,6 @@ public class Enemy2 : MonoBehaviour
         {
             PlayerPrefs.SetInt("infight", 0);
 
-            Destroy(gameObject);
         }
     }
 

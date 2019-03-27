@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetFloat("Boss", 150.0f);
+        PlayerPrefs.SetFloat("Boss", 130.0f);
         Bhealth = (int)PlayerPrefs.GetFloat("Boss");
         
     }
@@ -22,7 +22,6 @@ public class Boss : MonoBehaviour
         {
             PlayerPrefs.SetInt("infight", 0);
             Destroy(gameObject);
-            SceneManager.LoadScene(8);
         }
     }
 }

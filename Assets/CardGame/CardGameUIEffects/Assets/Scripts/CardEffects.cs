@@ -475,13 +475,13 @@ public class CardEffects : MonoBehaviour {
                 if (card.cardName == "Strike")
                 {
 
-                    enemylife = enemylife - 0.1f;
+                    enemylife = enemylife - 0.15f;
                     PlayerPrefs.SetFloat("enemyHP", enemylife);
                     Goodegg.mana = Goodegg.mana - 1;
                 }
                 else if (card.cardName == "Guard")
                 {
-                    Goodegg.shield = Goodegg.shield + 7;
+                    Goodegg.shield = Goodegg.shield + 8;
                     PlayerPrefs.SetInt("Shield", Goodegg.shield);
                     Goodegg.mana = Goodegg.mana - 1;
                 }
@@ -495,7 +495,7 @@ public class CardEffects : MonoBehaviour {
                     {
                         Goodegg.healthAmount = 1.0f;
                     }
-                    Goodegg.mana = Goodegg.mana - 2;
+                    Goodegg.mana = Goodegg.mana - 1;
                 }
                 // Display skill effect
                 if (card.targetPlayer != null)
