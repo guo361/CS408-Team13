@@ -133,7 +133,7 @@ public class Bad2 : MonoBehaviour
                 {
                     Debug.Log("dot");
                     // Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
-                    deductByShield(0.05f);//replace previous by counting shield
+                    deductByShield(0.03f);//replace previous by counting shield
                     PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                     count++;
                 }
