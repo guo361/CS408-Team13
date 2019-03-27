@@ -42,7 +42,7 @@ public class Bad3 : MonoBehaviour
         transform.rotation = rotation;
         transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
-        if (healthAmount <= 0)
+        if (healthAmount <= 0.01)
         {
             PlayerPrefs.SetInt("enemy3dead", 1);
             dialog.SetActive(true);
