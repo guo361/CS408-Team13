@@ -418,15 +418,26 @@ public class CardEffects : MonoBehaviour {
         }
         if (Goodegg.mana == 0)
             return;
-        
-        
+
+
         if (focusOnCard != -1 && focusOnPlayer != null && Input.GetMouseButtonUp(0))
         {
             // Record the character which the card skilled on
             handCards[focusOnCard].targetPlayer = focusOnPlayer;
-            if (handCards[focusOnCard].cardName == "Guard" && handCards[focusOnCard].targetPlayer.name == ENEMY_CHARA_NAME)
+            //Guard and Swift cannot point to enemy
+            if ((handCards[focusOnCard].cardName == "Guard" || handCards[focusOnCard].cardName == "Swift") && handCards[focusOnCard].targetPlayer.name == ENEMY_CHARA_NAME)
             {
                
+                return;
+            }
+            //Lifesteal and Strike cannot point to player
+            if ((handCards[focusOnCard].cardName == "Lifesteal" || handCards[focusOnCard].cardName == "Strike") && handCards[focusOnCard].targetPlayer.name != ENEMY_CHARA_NAME)
+            {
+                return;
+            }
+            //Lifesteal is 2 mana but the remaining is 1
+            if ((handCards[focusOnCard].cardName == "Lifesteal") && Goodegg.mana == 1)
+            {
                 return;
             }
             playingCard.Add(handCards[focusOnCard]);
