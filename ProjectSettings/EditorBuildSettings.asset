@@ -14,9 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/demo.unity
     guid: a795404bee98076429ae310809fd61c7
-  - enabled: 1
-    path: Assets/bossfight.unity
-    guid: 3c12738638d106b4ca64b999f7fddbbf
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Fight.unity
     guid: 5eb76d00b9cad05468ac90015967938c
@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/demo.unity
     guid: a795404bee98076429ae310809fd61c7
+  - enabled: 1
+    path: Assets/finish_scene.unity
+    guid: 48e911624f854444a9a5d78870185682
+  - enabled: 1
+    path: Assets/BossFight.unity
+    guid: cbda1eaaa5b449c469c78d33adde5462
   m_configObjects: {}

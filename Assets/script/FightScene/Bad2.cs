@@ -43,6 +43,8 @@ public class Bad2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.rotation = rotation;
+        transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
         if (healthAmount <= 0.01)
         {
