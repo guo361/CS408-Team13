@@ -27,7 +27,7 @@ public class Bad2 : MonoBehaviour
         Debug.Log("enemy2" + healthAmount);
         dialog.SetActive(false);
 
-        count = 0;
+        count = 3;
 
         turnSystem = GameObject.Find("Turn-basedSystem").GetComponent<turnSystemScript09>();
 
