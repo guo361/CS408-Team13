@@ -46,7 +46,7 @@ public class Bad2 : MonoBehaviour
         transform.rotation = rotation;
         transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
-        if (healthAmount <= 0.01)
+        if (healthAmount <= 0.001)
         {
             PlayerPrefs.SetInt("enemy2dead", 1);
             dialog.SetActive(true);
@@ -95,7 +95,7 @@ public class Bad2 : MonoBehaviour
             case 0:
 
                 //Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
-                deductByShield(0.05f);//replace previous by counting shield
+                deductByShield(0.07f);//replace previous by counting shield
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 Debug.Log("count" + count);
                 if (count < 3)
@@ -110,7 +110,7 @@ public class Bad2 : MonoBehaviour
                 break;
             case 1:
                 // Goodegg.healthAmount = Goodegg.healthAmount - 0.02f;
-                deductByShield(0.02f);//replace previous by counting shield
+                deductByShield(0.05f);//replace previous by counting shield
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 Debug.Log("count" + count);
                 if (count < 3)
@@ -124,7 +124,7 @@ public class Bad2 : MonoBehaviour
                 break;
             case 2:
                 //Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
-                deductByShield(0.03f);//replace previous by counting shield
+                deductByShield(0.05f);//replace previous by counting shield
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 count = 0;
                 Debug.Log("count" + count);
@@ -132,7 +132,7 @@ public class Bad2 : MonoBehaviour
                 {
                     Debug.Log("dot");
                     // Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
-                    deductByShield(0.03f);//replace previous by counting shield
+                    deductByShield(0.05f);//replace previous by counting shield
                     PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                     count++;
                 }

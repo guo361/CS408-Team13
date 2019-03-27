@@ -46,7 +46,7 @@ public class BadEgg : MonoBehaviour
         transform.rotation = rotation;
         transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
-        if (healthAmount <= -1.0)
+        if (healthAmount <= 0.001)
         {
             PlayerPrefs.SetInt("enemy1dead", 1);
             //display reward windows
@@ -57,9 +57,9 @@ public class BadEgg : MonoBehaviour
         isTurn = turnClass.isTurn;
         if (isTurn)
         {
-            
+
             StartCoroutine("WaitAndMove");
-            
+
         }
     }
     void deductByShield(float damage)
@@ -71,9 +71,9 @@ public class BadEgg : MonoBehaviour
             real = real - Goodegg.shield;
             if (real <= 0)
             {
-                
+
                 Goodegg.shield = Goodegg.shield - temp;
-                
+
                 return;
             }
             else
@@ -82,9 +82,9 @@ public class BadEgg : MonoBehaviour
             }
 
         }
-       
+
         Goodegg.healthAmount = Goodegg.healthAmount - (real / 100.00f);
-        
+
     }
 
     IEnumerator WaitAndMove()
@@ -100,7 +100,7 @@ public class BadEgg : MonoBehaviour
 
         Goodegg.count = 1;
         StopCoroutine("WaitAndMove");
-        
+
     }
     public void addNewCard()
     {
