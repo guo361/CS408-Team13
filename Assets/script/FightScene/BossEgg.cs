@@ -114,7 +114,7 @@ public class BossEgg : MonoBehaviour
                 // Goodegg.healthAmount = Goodegg.healthAmount - 0.1f;
                 deductByShield(0.1f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
-                if (healthAmount < 0.95f)
+                if (healthAmount < 2.0f)
                 {
                     healthAmount = healthAmount + 0.05f;
                     PlayerPrefs.SetFloat("enemyHP", healthAmount);
