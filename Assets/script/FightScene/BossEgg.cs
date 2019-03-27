@@ -41,7 +41,7 @@ public class BossEgg : MonoBehaviour
         transform.rotation = rotation;
         transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
-        if (healthAmount <= 0.01)
+        if (healthAmount <= 0.001)
         {
             PlayerPrefs.SetInt("bossdead", 1);
             Destroy(gameObject);
@@ -100,23 +100,23 @@ public class BossEgg : MonoBehaviour
             case 0:
                 Goodegg.totalMana = 3;
                 // Goodegg.healthAmount = Goodegg.healthAmount - 0.1f;
-                deductByShield(0.1f);
+                deductByShield(0.20f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 break;
             case 1:
                 Goodegg.totalMana = 3;
                 //Goodegg.healthAmount = Goodegg.healthAmount - 0.13f;
-                deductByShield(0.13f);
+                deductByShield(0.22f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 break;
             case 2:
                 Goodegg.totalMana = 3;
                 // Goodegg.healthAmount = Goodegg.healthAmount - 0.1f;
-                deductByShield(0.1f);
+                deductByShield(0.20f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 if (healthAmount < 0.95f)
                 {
-                    healthAmount = healthAmount + 0.05f;
+                    healthAmount = healthAmount + 0.10f;
                     PlayerPrefs.SetFloat("enemyHP", healthAmount);
                 }
                 else
@@ -128,7 +128,7 @@ public class BossEgg : MonoBehaviour
             case 3:
                 Goodegg.totalMana = 3;
                 //Goodegg.healthAmount = Goodegg.healthAmount - 0.07f;
-                deductByShield(0.07f);
+                deductByShield(0.15f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 break;
         }

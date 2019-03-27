@@ -42,7 +42,7 @@ public class Bad3 : MonoBehaviour
         transform.rotation = rotation;
         transform.position = position;
         healthAmount = PlayerPrefs.GetFloat("enemyHP");
-        if (healthAmount <= 0.01)
+        if (healthAmount <= 0.001)
         {
             PlayerPrefs.SetInt("enemy3dead", 1);
             dialog.SetActive(true);
@@ -89,7 +89,7 @@ public class Bad3 : MonoBehaviour
         {
             case 0:
                 //Goodegg.healthAmount = Goodegg.healthAmount - 0.05f;
-                deductByShield(0.05f);
+                deductByShield(0.07f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 Debug.Log("count" + count);
                 if (count < 3 && healthAmount < 0.95f)
@@ -102,7 +102,7 @@ public class Bad3 : MonoBehaviour
                 break;
             case 1:
                 //Goodegg.healthAmount = Goodegg.healthAmount - 0.02f;
-                deductByShield(0.02f);
+                deductByShield(0.05f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 Debug.Log("count" + count);
                 if (count < 3 && healthAmount < 0.95f)
@@ -115,7 +115,7 @@ public class Bad3 : MonoBehaviour
                 break;
             case 2:
                 //Goodegg.healthAmount = Goodegg.healthAmount - 0.03f;
-                deductByShield(0.03f);
+                deductByShield(0.05f);
                 PlayerPrefs.SetFloat("Health", Goodegg.healthAmount * 100);
                 count = 0;
                 Debug.Log("count" + count);
