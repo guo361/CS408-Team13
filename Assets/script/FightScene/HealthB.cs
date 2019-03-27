@@ -18,8 +18,17 @@ public class HealthB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Badp.text = string.Format("{0} ", Mathf.RoundToInt(BossEgg.healthAmount * 100));
-        localScale.x = BossEgg.healthAmount;
-        transform.localScale = localScale;
+        if (BossEgg.healthAmount < 0)
+        {
+            Badp.text = string.Format("{0} ", "0");
+            localScale.x = 0;
+            transform.localScale = localScale;
+        }
+        else
+        {
+            Badp.text = string.Format("{0} ", Mathf.RoundToInt(BossEgg.healthAmount * 100));
+            localScale.x = BossEgg.healthAmount;
+            transform.localScale = localScale;
+        }
     }
 }

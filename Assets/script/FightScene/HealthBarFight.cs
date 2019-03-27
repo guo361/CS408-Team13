@@ -18,8 +18,17 @@ public class HealthBarFight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Goodp.text = string.Format("{0} ", Mathf.RoundToInt(Goodegg.healthAmount * 100));
-        localScale.x = Goodegg.healthAmount;
-        transform.localScale = localScale;
+        if (Goodegg.healthAmount < 0)
+        {
+            Goodp.text = string.Format("{0} ", "0");
+            localScale.x = 0;
+            transform.localScale = localScale;
+        }
+        else
+        {
+            Goodp.text = string.Format("{0} ", Mathf.RoundToInt(Goodegg.healthAmount * 100));
+            localScale.x = Goodegg.healthAmount;
+            transform.localScale = localScale;
+        }
     }
 }
