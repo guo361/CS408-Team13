@@ -87,7 +87,7 @@ public class Goodegg : MonoBehaviour
 
     public void quitBtn()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
         Application.Quit();
     }
 }
