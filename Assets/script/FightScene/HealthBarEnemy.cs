@@ -18,17 +18,9 @@ public class HealthBarEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (BadEgg.healthAmount < 0)
-        {
-            Badp.text = string.Format("{0} ", "0");
-            localScale.x = 0;
-            transform.localScale = localScale;
-        }
-        else
-        {
             Badp.text = string.Format("{0} ", Mathf.RoundToInt(BadEgg.healthAmount * 100));
             localScale.x = BadEgg.healthAmount;
             transform.localScale = localScale;
-        }
+
     }
 }

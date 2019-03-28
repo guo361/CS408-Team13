@@ -18,17 +18,9 @@ public class HealthE3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Bad3.healthAmount < 0)
-        {
-            Badp.text = string.Format("{0} ", "0");
-            localScale.x = 0;
-            transform.localScale = localScale;
-        }
-        else
-        {
             Badp.text = string.Format("{0} ", Mathf.RoundToInt(Bad3.healthAmount * 100));
             localScale.x = Bad3.healthAmount;
             transform.localScale = localScale;
-        }
+
     }
 }
