@@ -189,6 +189,7 @@ public class CardEffects : MonoBehaviour {
         });
         discardBtn.GetComponent<Button>().onClick.AddListener(delegate ()
         {
+            discardBtn.GetComponent<Button>().interactable = false;
             ClearHandCard();
             if(drawPileCards.Count >= handNumAuto)
             {
@@ -212,6 +213,7 @@ public class CardEffects : MonoBehaviour {
                 }
 
             }
+            Invoke("setDiscardButtonActive", 4.5f);
             Goodegg.isTurn = false;
             Goodegg.turnClass.isTurn = Goodegg.isTurn;
             Goodegg.turnClass.wasTurnPrev = true;
@@ -281,7 +283,10 @@ public class CardEffects : MonoBehaviour {
         
         //AddDrawPileCard();
     }
-
+    void setDiscardButtonActive()
+    {
+        discardBtn.GetComponent<Button>().interactable = true;
+    }
     void AddDiscardPileCard(Card card)
     {
         Debug.Log("suki4");
@@ -564,7 +569,8 @@ public class CardEffects : MonoBehaviour {
                 }
                 else if(card.cardName == "Swift")
                 {
-                    if(drawPileCards.Count >= 2)
+                    discardBtn.GetComponent<Button>().interactable = false;
+                    if (drawPileCards.Count >= 2)
                     {
                         for (int ztemp = 0; ztemp < 2; ztemp++)
                         {
@@ -588,6 +594,7 @@ public class CardEffects : MonoBehaviour {
                         }
 
                     }
+                    Invoke("setDiscardButtonActive", 4.5f);
                     Goodegg.mana = Goodegg.mana - 2;
                 }
                 // Display skill effect
